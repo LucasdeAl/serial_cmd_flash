@@ -122,7 +122,7 @@ int main()
             memset(rx_buff, word, sizeof(rx_buff));       // carrega página com a palavra recebida
             for(int i=0; i < 64; i++)
             {
-                block = block + (i<<16);                              //incrementa página
+                block = block + i;                              //incrementa página
                 FLASH_program((block<<16), rx_buff, BUFFER_SIZE); //programa página
             }
 
@@ -143,7 +143,7 @@ int main()
             memset(rx_buff, 0x00, sizeof(rx_buff));                   //limpa buffer
             for(int i=0; i < 64; i++)
             {
-                block = block + (i<<16);                              //incrementa página
+                block = block + i;                              //incrementa página
                 FLASH_read((block<<16), rx_buff, BUFFER_SIZE + 1);    //ler página (dummy byte + 2048)
 
                 for(int j = 1; j < sizeof(rx_buff) - 1; j++)            // contador de erros
