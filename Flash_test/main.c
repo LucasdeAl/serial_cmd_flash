@@ -10,31 +10,98 @@
 #define BUFFER_SIZE 2048
 
 
+#define WRITE_CMD   0xAA
+#define READ_CMD    0xBB
+
 // mss_uart_instance_t * const gp_my_uart = &g_mss_uart1; //PC
 mss_uart_instance_t * const gp_my_uart = &g_mss_uart0; //STM32
 
-size_t
-UART_Polled_Rx
-(
-    mss_uart_instance_t * this_uart,
-    uint8_t * rx_buff,
-    size_t buff_size
-)
+
+
+//void flush_uart_fifo(mss_uart_instance_t *uart)
+//{
+//    /* Enquanto o LSR indicar que há dado disponível, leia e descarte */
+//    while ( uart->hw_reg->LSR & 0x01 ) {
+//        volatile uint8_t dummy = uart->hw_reg->RBR;
+//        (void)dummy;
+//    }
+//}
+
+size_t UART_Polled_Rx(mss_uart_instance_t *this_uart,
+                     uint8_t *rx_buff,
+                     size_t  buff_size)
 {
     size_t rx_size = 0U;
 
+    /* 1) limpa todo o FIFO antes de cada quadro */
+    while ( this_uart->hw_reg->LSR & 0x01 ) {
+        volatile uint8_t d = this_uart->hw_reg->RBR;
+        (void)d;
+    }
 
-    while( rx_size < buff_size )
-    {
-       while ( ((this_uart->hw_reg->LSR) & 0x1) != 0U  )
-       {
-           rx_buff[rx_size] = this_uart->hw_reg->RBR;
-           ++rx_size;
-       }
+    /* 2) agora leia exatamente buff_size bytes */
+    while ( rx_size < buff_size ) {
+        /* espera até ter pelo menos um byte */
+        while ( (this_uart->hw_reg->LSR & 0x01) == 0U ) { }
+        rx_buff[rx_size++] = this_uart->hw_reg->RBR;
     }
 
     return rx_size;
 }
+
+
+size_t UART_Polled_Rx_Sync(mss_uart_instance_t *uart,
+                           uint8_t *rx_buff,
+                           size_t   buff_size)
+{
+    size_t i;
+    uint8_t b;
+
+    while ( uart->hw_reg->LSR & 0x01 ) {
+        (void)uart->hw_reg->RBR;
+    }
+
+    /* 2) procure o HEADER */
+    do {
+        while ( (uart->hw_reg->LSR & 0x01) == 0U ) { }
+        b = uart->hw_reg->RBR;
+    } while ( b != WRITE_CMD && b != READ_CMD);
+
+    rx_buff[0] = b;
+
+    /* 3) leia o restante do pacote */
+    for ( i = 1; i < buff_size; ++i ) {
+        while ( (uart->hw_reg->LSR & 0x01) == 0U ) { }
+        rx_buff[i] = uart->hw_reg->RBR;
+    }
+
+    return buff_size;
+}
+
+
+
+//size_t
+//UART_Polled_Rx
+//(
+//    mss_uart_instance_t * this_uart,
+//    uint8_t * rx_buff,
+//    size_t buff_size
+//)
+//{
+//    size_t rx_size = 0U;
+//
+//
+//    while( rx_size < buff_size )
+//    {
+//       while ( ((this_uart->hw_reg->LSR) & 0x1) != 0U  )
+//       {
+//           rx_buff[rx_size] = this_uart->hw_reg->RBR;
+//           ++rx_size;
+//       }
+//    }
+//
+//    return rx_size;
+//}
 
 
 /*
@@ -105,7 +172,7 @@ int main()
     crc_local = calculate_crc16((uint8_t *)cmd,5);
     while(1)
     {
-        UART_Polled_Rx(gp_my_uart, cmd, 7);
+        UART_Polled_Rx_Sync(gp_my_uart, cmd, 7);
         //MSS_UART_polled_tx( gp_my_uart, (const uint8_t * )"k", 1 );
         op = (uint8_t)cmd[0];
         block = (uint8_t)cmd[1]<<8|(uint8_t)cmd[2];
@@ -152,7 +219,7 @@ int main()
                     if(num != word)
                     {
                         errors++;
-                    }
+                    } 
                 }
             }
 
@@ -162,15 +229,15 @@ int main()
               cmd_resp[0] = cmd[0];
               cmd_resp[1] = cmd[1];
               cmd_resp[2] = cmd[2];
-              cmd_resp[3] = (uint8_t)errors>>24;
-              cmd_resp[4] = (uint8_t)errors>>16;
-              cmd_resp[5] = (uint8_t)errors>>8;
-              cmd_resp[6] = (uint8_t)errors;
+              cmd_resp[3] = errors>>24;
+              cmd_resp[4] = errors>>16;
+              cmd_resp[5] = errors>>8;
+              cmd_resp[6] = errors;
 
               crc_local = calculate_crc16((uint8_t *)cmd_resp,7);
 
-              cmd_resp[7] = (uint8_t)crc_local>>8;
-              cmd_resp[8] = (uint8_t)crc_local;
+              cmd_resp[7] = crc_local>>8;
+              cmd_resp[8] = crc_local;
 
               MSS_UART_polled_tx( gp_my_uart, cmd_resp, 9 );  //envia comando
           }else
@@ -178,6 +245,9 @@ int main()
               MSS_UART_polled_tx( gp_my_uart, (const uint8_t * )"e", 1 );
           }
 
+        }
+        else {
+            MSS_UART_polled_tx( gp_my_uart, (const uint8_t * )"e", 1 );
         }
 
 
