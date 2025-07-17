@@ -130,10 +130,55 @@ uint16_t calculate_crc16(const uint8_t *data, size_t length)
                 crc >>= 1; // Apenas desloca
             }
         }
+
+
     }
 
     return crc; // Retorna o CRC calculado
 }
+
+void run_test(void){
+    uint16_t write_data = 0x5555;
+    uint32_t errors = 0;
+    uint32_t percorridos = 0;
+    uint16_t block = 0;
+    uint8_t rx_buff[BUFFER_SIZE+1];
+
+    for(uint16_t i = 700; i<1023; i++){
+        block = i<<6;
+        FLASH_erase_128k_block((uint32_t)(block<<16)); //apaga o bloco
+        memset(rx_buff, write_data, sizeof(rx_buff));       // carrega página com a palavra recebida
+        for(int i=0; i < 64; i++)
+        {
+            block = block + i;                              //incrementa página
+            FLASH_program((block<<16), rx_buff, BUFFER_SIZE); //programa página
+        }
+
+        for(int i=0; i < 64; i++)
+        {
+            block = block + i;                              //incrementa página
+            FLASH_read((block<<16), rx_buff, BUFFER_SIZE + 1);    //ler página (dummy byte + 2048)
+
+            for(int j = 1; j < sizeof(rx_buff) - 1; j++)            // contador de erros
+            {
+                uint16_t num = rx_buff[j+1]<<8|rx_buff[j];
+                if(num != write_data)
+                {
+                    errors++;
+                }
+                percorridos++;
+
+            }
+        }
+        if(errors!=0){
+            errors = 0;
+        }
+        percorridos = 0;
+
+    }
+}
+
+
 int main()
 {
 
@@ -144,7 +189,7 @@ int main()
     uint16_t crc;
     uint32_t errors;
 
-    uint8_t rx_buff[BUFFER_SIZE+1]; //tamanho de uma página
+//    uint8_t rx_buff[BUFFER_SIZE+1]; //tamanho de uma página
     uint16_t crc_local;
     uint8_t cmd_resp[9];
 
@@ -172,83 +217,89 @@ int main()
     crc_local = calculate_crc16((uint8_t *)cmd,5);
     while(1)
     {
-        UART_Polled_Rx_Sync(gp_my_uart, cmd, 7);
-        //MSS_UART_polled_tx( gp_my_uart, (const uint8_t * )"k", 1 );
-        op = (uint8_t)cmd[0];
-        block = (uint8_t)cmd[1]<<8|(uint8_t)cmd[2];
-        word = (uint8_t)cmd[3]<<8|(uint8_t)cmd[4];
-        crc = (uint8_t)cmd[5]<<8|(uint8_t)cmd[6];
+//        for(uint16_t i=0; i<1024; i++){
+//            block = (i<<6);
+//            FLASH_erase_128k_block((uint32_t)(block<<16));
+//        }
 
-        crc_local = calculate_crc16((uint8_t *)cmd,5);
-        //MSS_UART_polled_tx( gp_my_uart, (const uint8_t * )"k", 1 );
-
-
-        if(op == 0xaa) //comando escrita na flash
-        {
-            FLASH_erase_128k_block((uint32_t)(block<<16)); //apaga o bloco
-            memset(rx_buff, word, sizeof(rx_buff));       // carrega página com a palavra recebida
-            for(int i=0; i < 64; i++)
-            {
-                block = block + i;                              //incrementa página
-                FLASH_program((block<<16), rx_buff, BUFFER_SIZE); //programa página
-            }
-
-
-            if(crc == crc_local)
-           {
-               MSS_UART_polled_tx( gp_my_uart, (const uint8_t * )"k", 1 );
-           }else
-           {
-               MSS_UART_polled_tx( gp_my_uart, (const uint8_t * )"e", 1 );
-           }
-
-
-        }
-        else if(op == 0xbb)// comando leitura na flash
-        {
-            errors = 0;
-            memset(rx_buff, 0x00, sizeof(rx_buff));                   //limpa buffer
-            for(int i=0; i < 64; i++)
-            {
-                block = block + i;                              //incrementa página
-                FLASH_read((block<<16), rx_buff, BUFFER_SIZE + 1);    //ler página (dummy byte + 2048)
-
-                for(int j = 1; j < sizeof(rx_buff) - 1; j++)            // contador de erros
-                {
-                    uint16_t num = rx_buff[j+1]<<8|rx_buff[j];
-                    if(num != word)
-                    {
-                        errors++;
-                    } 
-                }
-            }
-
-          if(crc == crc_local)
-          {
-              //monta comando
-              cmd_resp[0] = cmd[0];
-              cmd_resp[1] = cmd[1];
-              cmd_resp[2] = cmd[2];
-              cmd_resp[3] = errors>>24;
-              cmd_resp[4] = errors>>16;
-              cmd_resp[5] = errors>>8;
-              cmd_resp[6] = errors;
-
-              crc_local = calculate_crc16((uint8_t *)cmd_resp,7);
-
-              cmd_resp[7] = crc_local>>8;
-              cmd_resp[8] = crc_local;
-
-              MSS_UART_polled_tx( gp_my_uart, cmd_resp, 9 );  //envia comando
-          }else
-          {
-              MSS_UART_polled_tx( gp_my_uart, (const uint8_t * )"e", 1 );
-          }
-
-        }
-        else {
-            MSS_UART_polled_tx( gp_my_uart, (const uint8_t * )"e", 1 );
-        }
+        run_test();
+//        UART_Polled_Rx_Sync(gp_my_uart, cmd, 7);
+//        //MSS_UART_polled_tx( gp_my_uart, (const uint8_t * )"k", 1 );
+//        op = (uint8_t)cmd[0];
+//        block = (uint8_t)cmd[1]<<8|(uint8_t)cmd[2];
+//        word = (uint8_t)cmd[3]<<8|(uint8_t)cmd[4];
+//        crc = (uint8_t)cmd[5]<<8|(uint8_t)cmd[6];
+//
+//        crc_local = calculate_crc16((uint8_t *)cmd,5);
+//        //MSS_UART_polled_tx( gp_my_uart, (const uint8_t * )"k", 1 );
+//
+//
+//        if(op == 0xaa) //comando escrita na flash
+//        {
+//            FLASH_erase_128k_block((uint32_t)(block<<16)); //apaga o bloco
+//            memset(rx_buff, word, sizeof(rx_buff));       // carrega página com a palavra recebida
+//            for(int i=0; i < 64; i++)
+//            {
+//                block = block + i;                              //incrementa página
+//                FLASH_program((block<<16), rx_buff, BUFFER_SIZE); //programa página
+//            }
+//
+//
+//            if(crc == crc_local)
+//           {
+//               MSS_UART_polled_tx( gp_my_uart, (const uint8_t * )"k", 1 );
+//           }else
+//           {
+//               MSS_UART_polled_tx( gp_my_uart, (const uint8_t * )"e", 1 );
+//           }
+//
+//
+//        }
+//        else if(op == 0xbb)// comando leitura na flash
+//        {
+//            errors = 0;
+//            memset(rx_buff, 0x00, sizeof(rx_buff));                   //limpa buffer
+//            for(int i=0; i < 64; i++)
+//            {
+//                block = block + i;                              //incrementa página
+//                FLASH_read((block<<16), rx_buff, BUFFER_SIZE + 1);    //ler página (dummy byte + 2048)
+//
+//                for(int j = 1; j < sizeof(rx_buff) - 1; j++)            // contador de erros
+//                {
+//                    uint16_t num = rx_buff[j+1]<<8|rx_buff[j];
+//                    if(num != word)
+//                    {
+//                        errors++;
+//                    }
+//                }
+//            }
+//
+//          if(crc == crc_local)
+//          {
+//              //monta comando
+//              cmd_resp[0] = cmd[0];
+//              cmd_resp[1] = cmd[1];
+//              cmd_resp[2] = cmd[2];
+//              cmd_resp[3] = errors>>24;
+//              cmd_resp[4] = errors>>16;
+//              cmd_resp[5] = errors>>8;
+//              cmd_resp[6] = errors;
+//
+//              crc_local = calculate_crc16((uint8_t *)cmd_resp,7);
+//
+//              cmd_resp[7] = crc_local>>8;
+//              cmd_resp[8] = crc_local;
+//
+//              MSS_UART_polled_tx( gp_my_uart, cmd_resp, 9 );  //envia comando
+//          }else
+//          {
+//              MSS_UART_polled_tx( gp_my_uart, (const uint8_t * )"e", 1 );
+//          }
+//
+//        }
+//        else {
+//            MSS_UART_polled_tx( gp_my_uart, (const uint8_t * )"e", 1 );
+//        }
 
 
     }
