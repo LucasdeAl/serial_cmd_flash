@@ -188,10 +188,15 @@ int main()
         {
             FLASH_reset();
             FLASH_erase_128k_block((uint32_t)(block<<16)); //apaga o bloco
-            memset(rx_buff, word, sizeof(rx_buff));       // carrega página com a palavra recebida
+            
+            for (int i = 0; i < BUFFER_SIZE; i += 2) {  // carrega página com a palavra recebida
+                rx_buff[i] = (word >> 8) & 0xFF ;
+                rx_buff[i + 1] = word & 0xFF;
+            }
+          
             for(int i=0; i < 64; i++)
             {
-                block = block + i;                              //incrementa página
+                block = block + 1;                              //incrementa página
                 FLASH_program((block<<16), rx_buff, BUFFER_SIZE); //programa página
             }
 
@@ -213,16 +218,17 @@ int main()
             memset(rx_buff, 0x00, sizeof(rx_buff));                   //limpa buffer
             for(int i=0; i < 64; i++)
             {
-                block = block + i;                              //incrementa página
+                block = block + 1;                              //incrementa página
                 FLASH_read((block<<16), rx_buff, BUFFER_SIZE + 1);    //ler página (dummy byte + 2048)
 
-                for(int j = 1; j < sizeof(rx_buff) - 1; j++)            // contador de erros
+              for(int j = 1; j < BUFFER_SIZE+1; j+=2)            // contador de erros
+            {
+                uint16_t num = rx_buff[j]<<8|rx_buff[j+1];
+                if(num != write_data)
                 {
-                    uint16_t num = rx_buff[j+1]<<8|rx_buff[j];
-                    if(num != word)
-                    {
-                        errors++;
-                    } 
+                    errors++;
+                }
+            }
                 }
             }
 
