@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 void FLASH_init( void );
-
+void FLASH_reset(void);
 void FLASH_read_device_id
 (
     uint8_t * manufacturer_id,
