@@ -21,7 +21,7 @@
 #define READ_STATUS         0x05 //OK
 #define W25N01G_CONFIG_BUFFER_READ_MODE (1 << 3)//configura modo de leitura para ler do buffer buff =1
 
-
+#define DEVICE_RESET 0xFF
 #define W25N01G_PROT_REG 0xA0
 #define W25N01G_CONF_REG 0xB0
 #define W25N01G_STAT_REG 0xC0
@@ -72,6 +72,21 @@ void FLASH_init( void ) //OK
         );
 */
 }
+/*******************************************************************************
+ *
+ */
+
+void FLASH_reset()
+{
+       uint8_t device_reset = DEVICE_ID_READ;
+       uint8_t read_buffer[2];
+
+       MSS_SPI_set_slave_select( &g_mss_spi0, MSS_SPI_SLAVE_0 );
+       wait_ready();
+       MSS_SPI_transfer_block( &g_mss_spi0, &device_reset, 1, read_buffer, sizeof(read_buffer) );
+       MSS_SPI_clear_slave_select( &g_mss_spi0, MSS_SPI_SLAVE_0 );
+}
+
 
 /*******************************************************************************
  *
