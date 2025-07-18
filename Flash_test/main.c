@@ -186,6 +186,7 @@ int main()
 
         if(op == 0xaa) //comando escrita na flash
         {
+            FLASH_reset();
             FLASH_erase_128k_block((uint32_t)(block<<16)); //apaga o bloco
             memset(rx_buff, word, sizeof(rx_buff));       // carrega página com a palavra recebida
             for(int i=0; i < 64; i++)
@@ -207,6 +208,7 @@ int main()
         }
         else if(op == 0xbb)// comando leitura na flash
         {
+            FLASH_reset();
             errors = 0;
             memset(rx_buff, 0x00, sizeof(rx_buff));                   //limpa buffer
             for(int i=0; i < 64; i++)
