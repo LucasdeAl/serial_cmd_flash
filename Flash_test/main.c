@@ -150,6 +150,7 @@ int main()
 
     MSS_SYS_init(MSS_SYS_NO_EVENT_HANDLER);
     FLASH_init();
+    FLASH_reset();
     FLASH_global_unprotect();
     //FLASH_chip_erase();
 
