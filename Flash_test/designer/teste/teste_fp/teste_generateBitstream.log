@@ -1,0 +1,13 @@
+Software Version: 2024.1.0.3
+Opened 'C:\Users\Lucas\Documents\EscritaFlash\Flash_test\designer\teste\teste_fp\teste.pro'
+PDB file 'C:\Users\Lucas\Documents\EscritaFlash\Flash_test\designer\teste\teste.pdb' has been loaded successfully.
+DESIGN : teste;  CHECKSUM : CD64;  PDB_VERSION : 1.9
+Info: Programming Interface selected is JTAG.
+File/Folder 'C:\Users\Lucas\Documents\EscritaFlash\Flash_test\designer\teste\teste.ppd' will be overwritten.
+Successfully exported PPD file for currently secured device: 'C:\Users\Lucas\Documents\EscritaFlash\Flash_test\designer\teste\teste.ppd'; file programs Fabric.
+Fabric component bitstream digest: 79b1c1417f12f1ccda5884be1fa6a18b8c084b6be04d199b82a2c69f9d51a33c
+Entire bitstream digest: 7106089b19ec5fafde594d14276a7bc28fe3d22c0620eb7fdf99b1010f09aedf
+Finished: Tue Jul 08 09:19:15 2025 (Elapsed time 00:00:09)
+
+Project saved.
+Project closed.
