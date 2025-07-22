@@ -813,7 +813,7 @@ void MSS_SPI_set_slave_block_buffers
     {
         volatile uint32_t dummy;
         dummy = this_spi->hw_reg->RX_DATA;
-        dummy = dummy;  /* Prevent Lint warning. */
+        //dummy = dummy;  /* Prevent Lint warning. */
     }
 
     /* Use the frame counter to control how often receive interrupts are generated. */
