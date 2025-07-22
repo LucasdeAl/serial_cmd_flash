@@ -138,7 +138,7 @@ uint16_t calculate_crc16(const uint8_t *data, size_t length)
 }
 
 void run_test(void){
-    uint16_t write_data = 0xabcd;
+    uint16_t write_data = 0xcdef;
     uint32_t errors = 0;
     uint32_t percorridos = 0;
     uint16_t block = 0;
@@ -158,17 +158,19 @@ void run_test(void){
 
 
         pagina = block;                            //ok
-        for(int i=0; i < 63; i++)
+        for(int i=0; i < 64; i++)
         {
-            pagina = pagina + 1;                              //incrementa página
+
             FLASH_program((pagina<<16), rx_buff, BUFFER_SIZE); //programa página
+            pagina = pagina + 1;                              //incrementa página
         }
         FLASH_reset();
         pagina = block;
-        for(int i=0; i < 63; i++)
+        for(int i=0; i < 64; i++)
         {
-            pagina = pagina + 1;                              //incrementa página
+
             FLASH_read((pagina<<16), rx_buff, BUFFER_SIZE + 1);    //ler página (dummy byte + 2048)
+            pagina = pagina + 1;                              //incrementa página
 
             for(int j = 1; j < BUFFER_SIZE+1; j+=2)            // contador de erros
             {
