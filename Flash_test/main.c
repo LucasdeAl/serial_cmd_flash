@@ -143,6 +143,7 @@ int main()
     uint16_t word;
     uint16_t crc;
     uint32_t errors;
+    uint16_t pagina = 0;
 
     uint8_t rx_buff[BUFFER_SIZE+1]; //tamanho de uma página
     uint16_t crc_local;
@@ -188,16 +189,17 @@ int main()
         {
             FLASH_reset();
             FLASH_erase_128k_block((uint32_t)(block<<16)); //apaga o bloco
-            
+
             for (int i = 0; i < BUFFER_SIZE; i += 2) {  // carrega página com a palavra recebida
                 rx_buff[i] = (word >> 8) & 0xFF ;
                 rx_buff[i + 1] = word & 0xFF;
             }
-          
-            for(int i=0; i < 64; i++)
+
+            pagina = block;
+            for(int i=0; i < 63; i++)
             {
-                block = block + 1;                              //incrementa página
-                FLASH_program((block<<16), rx_buff, BUFFER_SIZE); //programa página
+                pagina = pagina + 1;                              //incrementa página
+                FLASH_program((pagina<<16), rx_buff, BUFFER_SIZE); //programa página
             }
 
 
@@ -216,21 +218,26 @@ int main()
             FLASH_reset();
             errors = 0;
             memset(rx_buff, 0x00, sizeof(rx_buff));                   //limpa buffer
-            for(int i=0; i < 64; i++)
+            pagina = block;
+            for(int i=0; i < 63; i++)
             {
-                block = block + 1;                              //incrementa página
-                FLASH_read((block<<16), rx_buff, BUFFER_SIZE + 1);    //ler página (dummy byte + 2048)
+                pagina = pagina + 1;                              //incrementa página
+                FLASH_read((pagina<<16), rx_buff, BUFFER_SIZE + 1);    //ler página (dummy byte + 2048)
 
               for(int j = 1; j < BUFFER_SIZE+1; j+=2)            // contador de erros
-            {
-                uint16_t num = rx_buff[j]<<8|rx_buff[j+1];
-                if(num != write_data)
-                {
-                    errors++;
-                }
+              {
+                    uint16_t num = rx_buff[j]<<8|rx_buff[j+1];
+                    if(num != word)
+                    {
+                        errors++;
+                    }
+              }
             }
-                }
-            }
+        }
+        else
+        {
+           MSS_UART_polled_tx( gp_my_uart, (const uint8_t * )"e", 1 );
+        }
 
           if(crc == crc_local)
           {
@@ -253,12 +260,6 @@ int main()
           {
               MSS_UART_polled_tx( gp_my_uart, (const uint8_t * )"e", 1 );
           }
-
-        }
-        else {
-            MSS_UART_polled_tx( gp_my_uart, (const uint8_t * )"e", 1 );
-        }
-
 
     }
 
