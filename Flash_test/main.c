@@ -196,10 +196,10 @@ int main()
             }
 
             pagina = block;
-            for(int i=0; i < 63; i++)
+            for(int i=0; i < 64; i++)
             {
-                pagina = pagina + 1;                              //incrementa página
                 FLASH_program((pagina<<16), rx_buff, BUFFER_SIZE); //programa página
+                pagina = pagina + 1;                              //incrementa página
             }
 
 
@@ -219,10 +219,10 @@ int main()
             errors = 0;
             memset(rx_buff, 0x00, sizeof(rx_buff));                   //limpa buffer
             pagina = block;
-            for(int i=0; i < 63; i++)
+            for(int i=0; i < 64; i++)
             {
-                pagina = pagina + 1;                              //incrementa página
                 FLASH_read((pagina<<16), rx_buff, BUFFER_SIZE + 1);    //ler página (dummy byte + 2048)
+                pagina = pagina + 1;                              //incrementa página
 
               for(int j = 1; j < BUFFER_SIZE+1; j+=2)            // contador de erros
               {
