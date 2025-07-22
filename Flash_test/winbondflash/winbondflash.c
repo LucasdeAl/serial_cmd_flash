@@ -72,6 +72,7 @@ void FLASH_init( void ) //OK
         );
 */
 }
+
 /*******************************************************************************
  *
  */
@@ -88,6 +89,7 @@ void FLASH_reset()
 }
 
 
+
 /*******************************************************************************
  *
  */
@@ -101,7 +103,7 @@ void FLASH_read_device_id //OK
     uint8_t read_buffer[2];
     
     MSS_SPI_set_slave_select( &g_mss_spi0, MSS_SPI_SLAVE_0 );
-    
+
     MSS_SPI_transfer_block( &g_mss_spi0, &read_device_id_cmd, 1, read_buffer, sizeof(read_buffer) );
     MSS_SPI_clear_slave_select( &g_mss_spi0, MSS_SPI_SLAVE_0 );
 
@@ -243,9 +245,11 @@ void FLASH_erase_128k_block(uint32_t address)
 
     // Enviar o comando para apagar o bloco de 128KB, utilizando apenas o Page Address
     cmd_buffer[0] = ERASE_128K_BLOCK_OPCODE;
-    cmd_buffer[1] = (page_address >> 8) & 0xFF;  // Byte mais significativo do Page Address
-    cmd_buffer[2] = page_address & 0xFF;         // Byte menos significativo do Page Address
+    cmd_buffer[1] = 0;//dummy
+    cmd_buffer[2] = (page_address >> 8) & 0xFF;  // Byte mais significativo do Page Address
+    cmd_buffer[3] = page_address & 0xFF;         // Byte menos significativo do Page Address
 
+    wait_ready();
     // Enviar o comando de apagamento do bloco de 128KB
     MSS_SPI_transfer_block(&g_mss_spi0, cmd_buffer, sizeof(cmd_buffer), NULL, 0);
 
@@ -311,7 +315,7 @@ void write_cmd_data
     {
         tx_buffer[cmd_byte_size + idx] = data_buffer[idx];
     }
-
+    wait_ready();
     MSS_SPI_transfer_block( &g_mss_spi0, tx_buffer, transfer_size, 0, 0 );
 
 #endif
@@ -380,7 +384,7 @@ void FLASH_program
     {
         tx_buff[in_buffer_idx + i] = write_buffer[i];
     }
-
+    wait_ready();
     MSS_SPI_transfer_block( &g_mss_spi0, tx_buff, (sizeof(cmd_buffer) + nb_bytes_to_write), 0, 0 );
 
     /* Programa a página */
