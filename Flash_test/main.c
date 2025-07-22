@@ -138,30 +138,41 @@ uint16_t calculate_crc16(const uint8_t *data, size_t length)
 }
 
 void run_test(void){
-    uint16_t write_data = 0x5555;
+    uint16_t write_data = 0xabcd;
     uint32_t errors = 0;
     uint32_t percorridos = 0;
     uint16_t block = 0;
     uint8_t rx_buff[BUFFER_SIZE+1];
+    uint16_t pagina = 0;
 
-    for(uint16_t i = 700; i<1023; i++){
-        block = i<<6;
-        FLASH_erase_128k_block((uint32_t)(block<<16)); //apaga o bloco
-        memset(rx_buff, write_data, sizeof(rx_buff));       // carrega página com a palavra recebida
-        for(int i=0; i < 64; i++)
+    for(uint16_t i = 0; i<1024; i++){
+        block = i<<6;                                   //ok
+        FLASH_erase_128k_block((uint32_t)(block<<16)); //apaga o bloco ok
+        //memset(rx_buff, write_data, sizeof(rx_buff));
+
+
+        for (int i = 0; i < BUFFER_SIZE; i += 2) {
+                rx_buff[i] = (write_data >> 8) & 0xFF ;
+                rx_buff[i + 1] = write_data & 0xFF;
+            }
+
+
+        pagina = block;                            //ok
+        for(int i=0; i < 63; i++)
         {
-            block = block + i;                              //incrementa página
-            FLASH_program((block<<16), rx_buff, BUFFER_SIZE); //programa página
+            pagina = pagina + 1;                              //incrementa página
+            FLASH_program((pagina<<16), rx_buff, BUFFER_SIZE); //programa página
         }
-
-        for(int i=0; i < 64; i++)
+        FLASH_reset();
+        pagina = block;
+        for(int i=0; i < 63; i++)
         {
-            block = block + i;                              //incrementa página
-            FLASH_read((block<<16), rx_buff, BUFFER_SIZE + 1);    //ler página (dummy byte + 2048)
+            pagina = pagina + 1;                              //incrementa página
+            FLASH_read((pagina<<16), rx_buff, BUFFER_SIZE + 1);    //ler página (dummy byte + 2048)
 
-            for(int j = 1; j < sizeof(rx_buff) - 1; j++)            // contador de erros
+            for(int j = 1; j < BUFFER_SIZE+1; j+=2)            // contador de erros
             {
-                uint16_t num = rx_buff[j+1]<<8|rx_buff[j];
+                uint16_t num = rx_buff[j]<<8|rx_buff[j+1];
                 if(num != write_data)
                 {
                     errors++;
@@ -170,12 +181,16 @@ void run_test(void){
 
             }
         }
+
         if(errors!=0){
             errors = 0;
         }
         percorridos = 0;
 
+
     }
+
+    block = 0;
 }
 
 
@@ -189,14 +204,15 @@ int main()
     uint16_t crc;
     uint32_t errors;
 
-//    uint8_t rx_buff[BUFFER_SIZE+1]; //tamanho de uma página
+   // uint8_t rx_buff[BUFFER_SIZE+1]; //tamanho de uma página
     uint16_t crc_local;
     uint8_t cmd_resp[9];
 
     MSS_SYS_init(MSS_SYS_NO_EVENT_HANDLER);
     FLASH_init();
+    FLASH_reset();
     FLASH_global_unprotect();
-    //FLASH_chip_erase();
+    FLASH_chip_erase();
 
     MSS_UART_init( gp_my_uart,
                 MSS_UART_57600_BAUD,
@@ -222,6 +238,8 @@ int main()
 //            FLASH_erase_128k_block((uint32_t)(block<<16));
 //        }
 
+
+
         run_test();
 //        UART_Polled_Rx_Sync(gp_my_uart, cmd, 7);
 //        //MSS_UART_polled_tx( gp_my_uart, (const uint8_t * )"k", 1 );
@@ -240,7 +258,7 @@ int main()
 //            memset(rx_buff, word, sizeof(rx_buff));       // carrega página com a palavra recebida
 //            for(int i=0; i < 64; i++)
 //            {
-//                block = block + i;                              //incrementa página
+//                block = block + 1;                              //incrementa página
 //                FLASH_program((block<<16), rx_buff, BUFFER_SIZE); //programa página
 //            }
 //
@@ -261,7 +279,7 @@ int main()
 //            memset(rx_buff, 0x00, sizeof(rx_buff));                   //limpa buffer
 //            for(int i=0; i < 64; i++)
 //            {
-//                block = block + i;                              //incrementa página
+//                block = block + 1;                              //incrementa página
 //                FLASH_read((block<<16), rx_buff, BUFFER_SIZE + 1);    //ler página (dummy byte + 2048)
 //
 //                for(int j = 1; j < sizeof(rx_buff) - 1; j++)            // contador de erros
