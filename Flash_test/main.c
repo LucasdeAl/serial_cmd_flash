@@ -233,33 +233,33 @@ int main()
                     }
               }
             }
+
+            if(crc == crc_local)
+            {
+                //monta comando
+                cmd_resp[0] = cmd[0];
+                cmd_resp[1] = cmd[1];
+                cmd_resp[2] = cmd[2];
+                cmd_resp[3] = errors>>24;
+                cmd_resp[4] = errors>>16;
+                cmd_resp[5] = errors>>8;
+                cmd_resp[6] = errors;
+
+                crc_local = calculate_crc16((uint8_t *)cmd_resp,7);
+
+                cmd_resp[7] = crc_local>>8;
+                cmd_resp[8] = crc_local;
+
+                MSS_UART_polled_tx( gp_my_uart, cmd_resp, 9 );  //envia comando
+            }else
+            {
+                MSS_UART_polled_tx( gp_my_uart, (const uint8_t * )"e", 1 );
+            }
         }
         else
         {
            MSS_UART_polled_tx( gp_my_uart, (const uint8_t * )"e", 1 );
         }
-
-          if(crc == crc_local)
-          {
-              //monta comando
-              cmd_resp[0] = cmd[0];
-              cmd_resp[1] = cmd[1];
-              cmd_resp[2] = cmd[2];
-              cmd_resp[3] = errors>>24;
-              cmd_resp[4] = errors>>16;
-              cmd_resp[5] = errors>>8;
-              cmd_resp[6] = errors;
-
-              crc_local = calculate_crc16((uint8_t *)cmd_resp,7);
-
-              cmd_resp[7] = crc_local>>8;
-              cmd_resp[8] = crc_local;
-
-              MSS_UART_polled_tx( gp_my_uart, cmd_resp, 9 );  //envia comando
-          }else
-          {
-              MSS_UART_polled_tx( gp_my_uart, (const uint8_t * )"e", 1 );
-          }
 
     }
 
