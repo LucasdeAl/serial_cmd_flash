@@ -1,0 +1,12 @@
+Detailed Resource Usage
+Module Name,Fabric 4LUT,Fabric DFF,Single-Ended I/O,PLLs and CCCs,Chip Globals,MSS,CAN,HS USB,RCOSC_50MHZ
+Primitives/Primitives,0,0,117,0,0,0,0,0,0
+fpga_top_design_0/Primitives,28,3,0,0,0,0,0,0,0
+fpga_top_design_0/modulo/Primitives,104,0,0,0,0,0,0,0,0
+fpga_top_design_0/modulo/codificador1/Primitives,14,0,0,0,0,0,0,0,0
+fpga_top_design_0/modulo/codificador2/Primitives,4,0,0,0,0,0,0,0,0
+fpga_top_design_0/modulo/decodificador1/Primitives,94,3,0,0,0,0,0,0,0
+fpga_top_design_0/modulo/decodificador2/Primitives,47,0,0,0,0,0,0,0,0
+prj_2_memory_sb_sb_0/CCC_0/Primitives,0,0,0,1,1,0,0,0,0
+prj_2_memory_sb_sb_0/FABOSC_0/Primitives,0,0,0,0,0,0,0,0,1
+prj_2_memory_sb_sb_0/prj_2_memory_sb_sb_MSS_0/Primitives,0,0,0,0,0,1,0,0,0
