@@ -5,17 +5,17 @@ and may only be used pursuant to the terms and conditions of a written license a
 with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
 Synopsys software or the associated documentation is strictly prohibited.
 Tool: Synplify Pro (R)
-Build: V-2023.09M
-Install: C:\Microchip\Libero_SoC_v2024.1\SynplifyPro
+Build: V-2023.09M-3
+Install: C:\Microchip\Libero_SoC_v2024.2\SynplifyPro
 OS: Windows 10 or later
-Hostname: DESKTOP-V6FS948
+Hostname: DESKTOP-RBAIS6T
 
 Implementation : synthesis
 
-# Written on Thu Jul 24 13:21:52 2025
+# Written on Mon Oct  6 10:21:18 2025
 
 ##### FILES SYNTAX CHECKED ##############################################
-Constraint File(s):      "C:\Users\Lucas\Documents\Nascerr\FPGA_design\FPGA2memory\designer\prj_2_memory_sb\synthesis.fdc"
+Constraint File(s):      "C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\designer\prj_2_memory_sb\synthesis.fdc"
 
 #Run constraint checker to find more issues with constraints.
 #########################################################################

@@ -2,8 +2,8 @@
 <?xml-stylesheet href="rptstyle.xsl" type="text/xsl" ?>
 <doc>
 <title>Global Net Report</title>
-<text>Microchip Technology Inc. - Microchip Libero Software Release v2024.1 (Version 2024.1.0.3)</text>
-<text>Date: Thu Jul 24 13:27:19 2025
+<text>Microchip Technology Inc. - Microchip Libero Software Release v2024.2 (Version 2024.2.0.13)</text>
+<text>Date: Mon Oct  6 10:21:38 2025
 </text>
 <section>
 <name>Global Nets Information</name>
@@ -109,7 +109,7 @@
  <cell>prj_2_memory_sb_sb_0/CCC_0/GL0_INST/U0_YWn_GEast</cell>
  <cell>4</cell>
  <cell>1</cell>
- <cell>(446, 117)</cell>
+ <cell>(446, 120)</cell>
  <cell>3</cell>
 </row>
 <row>

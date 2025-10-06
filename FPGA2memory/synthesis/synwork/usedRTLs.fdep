@@ -1,0 +1,19 @@
+#List of actual used RTLs.
+
+File                                                                                                                                                          Type     IN_PROJECT/INCLUDED/LIBRARY
+
+"C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb\prj_2_memory_sb.v"                                           verilog                      IN PROJECT
+"C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb\prj_2_memory_sb_sb.v"                                     verilog                      IN PROJECT
+"C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb_MSS\prj_2_memory_sb_sb_MSS.v"                             verilog                      IN PROJECT
+"C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb_MSS\prj_2_memory_sb_sb_MSS_syn.v"                         verilog                      IN PROJECT
+"C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb\FABOSC_0\prj_2_memory_sb_sb_FABOSC_0_OSC.v"               verilog                      IN PROJECT
+"C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\Actel\SgCore\OSC\2.0.101\osc_comps.v"                                             verilog                      IN PROJECT
+"C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vlog\core\coreresetp.v"                   verilog                      IN PROJECT
+"C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vlog\core\coreresetp_pcie_hotreset.v"     verilog                      IN PROJECT
+"C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb\CCC_0\prj_2_memory_sb_sb_CCC_0_FCCC.v"                    verilog                      IN PROJECT
+"C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\hdl\MRSC_decoder.sv"                                                                        verilog                        INCLUDED
+"C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\hdl\MRSC_encoder.sv"                                                                        verilog                        INCLUDED
+"C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\hdl\TBEC_RSC_decoder.sv"                                                                    verilog                        INCLUDED
+"C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\hdl\TBEC_RSC_encoder.sv"                                                                    verilog                        INCLUDED
+"C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\hdl\ecc_design.sv"                                                                          verilog                        INCLUDED
+"C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\hdl\design.sv"                                                                              verilog                      IN PROJECT

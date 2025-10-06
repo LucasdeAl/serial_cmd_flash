@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////
-// Created by SmartDesign Thu Jul 24 13:20:57 2025
-// Version: 2024.1 2024.1.0.3
+// Created by SmartDesign Mon Oct  6 10:16:57 2025
+// Version: 2024.2 2024.2.0.13
 //////////////////////////////////////////////////////////////////////
 
 `timescale 1ns / 100ps
@@ -12,9 +12,7 @@ module prj_2_memory_sb_sb(
     FAB_RESET_N,
     MMUART_0_RXD_F2M,
     MMUART_1_RXD_F2M,
-    SPI_0_CLK_F2M,
-    SPI_0_DI_F2M,
-    SPI_0_SS0_F2M,
+    SPI_0_DI,
     // Outputs
     FAB_CCC_GL0,
     FAB_CCC_LOCK,
@@ -23,10 +21,10 @@ module prj_2_memory_sb_sb(
     MMUART_1_TXD_M2F,
     MSS_READY,
     POWER_ON_RESET_N,
-    SPI_0_CLK_M2F,
-    SPI_0_DO_M2F,
-    SPI_0_SS0_M2F,
-    SPI_0_SS0_M2F_OE
+    SPI_0_DO,
+    // Inouts
+    SPI_0_CLK,
+    SPI_0_SS0
 );
 
 //--------------------------------------------------------------------
@@ -36,9 +34,7 @@ input  DEVRST_N;
 input  FAB_RESET_N;
 input  MMUART_0_RXD_F2M;
 input  MMUART_1_RXD_F2M;
-input  SPI_0_CLK_F2M;
-input  SPI_0_DI_F2M;
-input  SPI_0_SS0_F2M;
+input  SPI_0_DI;
 //--------------------------------------------------------------------
 // Output
 //--------------------------------------------------------------------
@@ -49,10 +45,12 @@ output MMUART_0_TXD_M2F;
 output MMUART_1_TXD_M2F;
 output MSS_READY;
 output POWER_ON_RESET_N;
-output SPI_0_CLK_M2F;
-output SPI_0_DO_M2F;
-output SPI_0_SS0_M2F;
-output SPI_0_SS0_M2F_OE;
+output SPI_0_DO;
+//--------------------------------------------------------------------
+// Inout
+//--------------------------------------------------------------------
+inout  SPI_0_CLK;
+inout  SPI_0_SS0;
 //--------------------------------------------------------------------
 // Nets
 //--------------------------------------------------------------------
@@ -72,13 +70,11 @@ wire   MSS_READY_net_0;
 wire   POWER_ON_RESET_N_net_0;
 wire   prj_2_memory_sb_sb_MSS_TMP_0_FIC_2_APB_M_PRESET_N;
 wire   prj_2_memory_sb_sb_MSS_TMP_0_MSS_RESET_N_M2F;
-wire   SPI_0_CLK_F2M;
-wire   SPI_0_CLK_M2F_net_0;
-wire   SPI_0_DI_F2M;
-wire   SPI_0_DO_M2F_net_0;
-wire   SPI_0_SS0_F2M;
-wire   SPI_0_SS0_M2F_net_0;
-wire   SPI_0_SS0_M2F_OE_net_0;
+wire   SPI_0_CLK;
+wire   SPI_0_DI;
+wire   SPI_0_DO_net_0;
+wire   SPI_0_SS0;
+wire   SPI_0_DO_net_1;
 wire   POWER_ON_RESET_N_net_1;
 wire   INIT_DONE_net_1;
 wire   FAB_CCC_GL0_net_1;
@@ -86,10 +82,6 @@ wire   FAB_CCC_LOCK_net_1;
 wire   MSS_READY_net_1;
 wire   MMUART_0_TXD_M2F_net_1;
 wire   MMUART_1_TXD_M2F_net_1;
-wire   SPI_0_DO_M2F_net_1;
-wire   SPI_0_CLK_M2F_net_1;
-wire   SPI_0_SS0_M2F_net_1;
-wire   SPI_0_SS0_M2F_OE_net_1;
 //--------------------------------------------------------------------
 // TiedOff Nets
 //--------------------------------------------------------------------
@@ -117,6 +109,8 @@ assign FIC_2_APB_M_PRDATA_const_net_0 = 32'h00000000;
 //--------------------------------------------------------------------
 // Top level output port assignments
 //--------------------------------------------------------------------
+assign SPI_0_DO_net_1         = SPI_0_DO_net_0;
+assign SPI_0_DO               = SPI_0_DO_net_1;
 assign POWER_ON_RESET_N_net_1 = POWER_ON_RESET_N_net_0;
 assign POWER_ON_RESET_N       = POWER_ON_RESET_N_net_1;
 assign INIT_DONE_net_1        = INIT_DONE_net_0;
@@ -131,14 +125,6 @@ assign MMUART_0_TXD_M2F_net_1 = MMUART_0_TXD_M2F_net_0;
 assign MMUART_0_TXD_M2F       = MMUART_0_TXD_M2F_net_1;
 assign MMUART_1_TXD_M2F_net_1 = MMUART_1_TXD_M2F_net_0;
 assign MMUART_1_TXD_M2F       = MMUART_1_TXD_M2F_net_1;
-assign SPI_0_DO_M2F_net_1     = SPI_0_DO_M2F_net_0;
-assign SPI_0_DO_M2F           = SPI_0_DO_M2F_net_1;
-assign SPI_0_CLK_M2F_net_1    = SPI_0_CLK_M2F_net_0;
-assign SPI_0_CLK_M2F          = SPI_0_CLK_M2F_net_1;
-assign SPI_0_SS0_M2F_net_1    = SPI_0_SS0_M2F_net_0;
-assign SPI_0_SS0_M2F          = SPI_0_SS0_M2F_net_1;
-assign SPI_0_SS0_M2F_OE_net_1 = SPI_0_SS0_M2F_OE_net_0;
-assign SPI_0_SS0_M2F_OE       = SPI_0_SS0_M2F_OE_net_1;
 //--------------------------------------------------------------------
 // Component instances
 //--------------------------------------------------------------------
@@ -262,32 +248,30 @@ prj_2_memory_sb_sb_FABOSC_0_OSC FABOSC_0(
 //--------prj_2_memory_sb_sb_MSS
 prj_2_memory_sb_sb_MSS prj_2_memory_sb_sb_MSS_0(
         // Inputs
+        .SPI_0_DI               ( SPI_0_DI ),
         .MCCC_CLK_BASE          ( FAB_CCC_GL0_net_0 ),
         .MCCC_CLK_BASE_PLL_LOCK ( FAB_CCC_LOCK_net_0 ),
         .MSS_RESET_N_F2M        ( CORERESETP_0_RESET_N_F2M ),
         .MMUART_0_RXD_F2M       ( MMUART_0_RXD_F2M ),
         .MMUART_1_RXD_F2M       ( MMUART_1_RXD_F2M ),
-        .SPI_0_DI_F2M           ( SPI_0_DI_F2M ),
-        .SPI_0_CLK_F2M          ( SPI_0_CLK_F2M ),
-        .SPI_0_SS0_F2M          ( SPI_0_SS0_F2M ),
         .FIC_2_APB_M_PREADY     ( VCC_net ), // tied to 1'b1 from definition
         .FIC_2_APB_M_PSLVERR    ( GND_net ), // tied to 1'b0 from definition
         .FIC_2_APB_M_PRDATA     ( FIC_2_APB_M_PRDATA_const_net_0 ), // tied to 32'h00000000 from definition
         // Outputs
+        .SPI_0_DO               ( SPI_0_DO_net_0 ),
         .MSS_RESET_N_M2F        ( prj_2_memory_sb_sb_MSS_TMP_0_MSS_RESET_N_M2F ),
         .MMUART_0_TXD_M2F       ( MMUART_0_TXD_M2F_net_0 ),
         .MMUART_1_TXD_M2F       ( MMUART_1_TXD_M2F_net_0 ),
-        .SPI_0_DO_M2F           ( SPI_0_DO_M2F_net_0 ),
-        .SPI_0_CLK_M2F          ( SPI_0_CLK_M2F_net_0 ),
-        .SPI_0_SS0_M2F          ( SPI_0_SS0_M2F_net_0 ),
-        .SPI_0_SS0_M2F_OE       ( SPI_0_SS0_M2F_OE_net_0 ),
         .FIC_2_APB_M_PRESET_N   ( prj_2_memory_sb_sb_MSS_TMP_0_FIC_2_APB_M_PRESET_N ),
         .FIC_2_APB_M_PCLK       (  ),
         .FIC_2_APB_M_PWRITE     (  ),
         .FIC_2_APB_M_PENABLE    (  ),
         .FIC_2_APB_M_PSEL       (  ),
         .FIC_2_APB_M_PADDR      (  ),
-        .FIC_2_APB_M_PWDATA     (  ) 
+        .FIC_2_APB_M_PWDATA     (  ),
+        // Inouts
+        .SPI_0_CLK              ( SPI_0_CLK ),
+        .SPI_0_SS0              ( SPI_0_SS0 ) 
         );
 
 //--------SYSRESET

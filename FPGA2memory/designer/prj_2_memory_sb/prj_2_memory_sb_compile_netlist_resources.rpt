@@ -1,6 +1,6 @@
 Resource Report
-Microchip Technology Inc. - Microchip Libero Software Release v2024.1 (Version 2024.1.0.3)
-Date: Thu Jul 24 13:22:00 2025
+Microchip Technology Inc. - Microchip Libero Software Release v2024.2 (Version 2024.2.0.13)
+Date: Mon Oct  6 10:21:28 2025
 
 Device Selection
 +--------------------------------+----------------+
@@ -20,11 +20,11 @@ Device Selection
 +--------------------------------+----------------+
 
 Source Files
-+---------+---------------------------------------------------------------------------------------+
-| Topcell | prj_2_memory_sb                                                                       |
-| Format  | Verilog                                                                               |
-| Source  | C:\Users\Lucas\Documents\Nascerr\FPGA_design\FPGA2memory\synthesis\prj_2_memory_sb.vm |
-+---------+---------------------------------------------------------------------------------------+
++---------+--------------------------------------------------------------------------------------------+
+| Topcell | prj_2_memory_sb                                                                            |
+| Format  | Verilog                                                                                    |
+| Source  | C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\synthesis\prj_2_memory_sb.vm |
++---------+--------------------------------------------------------------------------------------------+
 
 Options
 +----------------------------------------------------+-------+
@@ -37,7 +37,7 @@ Resource Usage
 +---------------------------+------+-------+------------+
 | Type                      | Used | Total | Percentage |
 +---------------------------+------+-------+------------+
-| 4LUT                      | 291  | 27696 | 1.05       |
+| 4LUT                      | 290  | 27696 | 1.05       |
 | DFF                       | 6    | 27696 | 0.02       |
 | I/O Register              | 0    | 414   | 0.00       |
 | User I/O                  | 117  | 138   | 84.78      |
@@ -60,11 +60,11 @@ Detailed Logic Resource Usage
 +--------------------------+------+-----+
 | Type                     | 4LUT | DFF |
 +--------------------------+------+-----+
-| Fabric Logic             | 291  | 6   |
+| Fabric Logic             | 290  | 6   |
 | RAM64x18 Interface Logic | 0    | 0   |
 | RAM1K18 Interface Logic  | 0    | 0   |
 | MACC Interface Logic     | 0    | 0   |
-| Total Used               | 291  | 6   |
+| Total Used               | 290  | 6   |
 +--------------------------+------+-----+
 
 MSS Resource Usage
@@ -93,8 +93,8 @@ I/O Function
 | Type                          | w/o register | w/ register | w/ DDR register |
 +-------------------------------+--------------+-------------+-----------------+
 | Input I/O                     | 32           | 0           | 0               |
-| Output I/O                    | 37           | 0           | 0               |
-| Bidirectional I/O             | 48           | 0           | 0               |
+| Output I/O                    | 35           | 0           | 0               |
+| Bidirectional I/O             | 50           | 0           | 0               |
 | Differential Input I/O Pairs  | 0            | 0           | 0               |
 | Differential Output I/O Pairs | 0            | 0           | 0               |
 +-------------------------------+--------------+-------------+-----------------+
@@ -103,7 +103,7 @@ I/O Technology
 +--------------+--------+------+-------+--------+---------------+
 | I/O Standard | Vddi   | Vref | Input | Output | Bidirectional |
 +--------------+--------+------+-------+--------+---------------+
-| LVCMOS25     |  2.50v |  N/A |  32   |  37    |  48           |
+| LVCMOS25     |  2.50v |  N/A |  32   |  35    |  50           |
 +--------------+--------+------+-------+--------+---------------+
 
 Nets assigned to chip global resources
@@ -122,54 +122,54 @@ Nets assigned to row global resources
 +--------+------+------+
 
 High fanout nets
-+--------+---------+--------------------------------------------------------+
-| Fanout | Type    | Name                                                   |
-+--------+---------+--------------------------------------------------------+
-| 66     | INT_NET | Net   : ecc_sel1_c                                     |
-|        |         | Driver: ecc_sel1_ibuf                                  |
-| 66     | INT_NET | Net   : fpga_mem_io_down_1                             |
-|        |         | Driver: fpga_top_design_0/fpga_mem_io_down_1           |
-| 52     | INT_NET | Net   : fpga_mem_io_up_1                               |
-|        |         | Driver: fpga_top_design_0/fpga_mem_io_up_1             |
-| 31     | INT_NET | Net   : ecc_sel2_c                                     |
-|        |         | Driver: ecc_sel2_ibuf                                  |
-| 23     | INT_NET | Net   : fpga_top_design_0/modulo/data_out_left_sn_N_2  |
-|        |         | Driver: fpga_top_design_0/modulo/data_out_left_sn_m1   |
-| 21     | INT_NET | Net   : ecc_sel0_c                                     |
-|        |         | Driver: ecc_sel0_ibuf                                  |
-| 16     | INT_NET | Net   : fpga_top_design_0_mcu_fpga_io_1_i              |
-|        |         | Driver: fpga_top_design_0/mcu_fpga_io_1_RNIF86G        |
-| 16     | INT_NET | Net   : fpga_top_design_0/modulo/chip_sel_out_ss0_Z    |
-|        |         | Driver: fpga_top_design_0/modulo/chip_sel_out_ss0      |
-| 12     | INT_NET | Net   : fpga_top_design_0/modulo/data_out_right_up11_Z |
-|        |         | Driver: fpga_top_design_0/modulo/data_out_right_up11   |
-| 11     | INT_NET | Net   : fpga_top_design_0/decoder_input_up[6]          |
-|        |         | Driver: fpga_top_design_0/fpga_mem_io_up_1_RNIDRF5D    |
-+--------+---------+--------------------------------------------------------+
++--------+---------+-----------------------------------------------------------------+
+| Fanout | Type    | Name                                                            |
++--------+---------+-----------------------------------------------------------------+
+| 71     | INT_NET | Net   : fpga_mem_io_down_1                                      |
+|        |         | Driver: fpga_top_design_0/fpga_mem_io_down_1                    |
+| 63     | INT_NET | Net   : ecc_sel1_c                                              |
+|        |         | Driver: ecc_sel1_ibuf                                           |
+| 52     | INT_NET | Net   : fpga_mem_io_up_1                                        |
+|        |         | Driver: fpga_top_design_0/fpga_mem_io_up_1                      |
+| 28     | INT_NET | Net   : ecc_sel2_c                                              |
+|        |         | Driver: ecc_sel2_ibuf                                           |
+| 26     | INT_NET | Net   : fpga_top_design_0/modulo/data_out_left_sn_N_2           |
+|        |         | Driver: fpga_top_design_0/modulo/data_out_left_sn_m1            |
+| 21     | INT_NET | Net   : ecc_sel0_c                                              |
+|        |         | Driver: ecc_sel0_ibuf                                           |
+| 16     | INT_NET | Net   : fpga_top_design_0_mcu_fpga_io_1_i                       |
+|        |         | Driver: fpga_top_design_0/mcu_fpga_io_1_RNIF86G                 |
+| 16     | INT_NET | Net   : fpga_top_design_0/modulo/data_out_right_down_sn_N_5_mux |
+|        |         | Driver: fpga_top_design_0/modulo/data_out_right_down_sn_m3      |
+| 12     | INT_NET | Net   : fpga_top_design_0/modulo/data_out_right_up11_Z          |
+|        |         | Driver: fpga_top_design_0/modulo/data_out_right_up11            |
+| 11     | INT_NET | Net   : fpga_top_design_0/decoder_input_up[14]                  |
+|        |         | Driver: fpga_top_design_0/fpga_mem_io_up_1_RNIS98VC             |
++--------+---------+-----------------------------------------------------------------+
 
 High fanout nets (through buffer trees)
-+--------+---------+--------------------------------------------------------+
-| Fanout | Type    | Name                                                   |
-+--------+---------+--------------------------------------------------------+
-| 66     | INT_NET | Net   : ecc_sel1_c                                     |
-|        |         | Driver: ecc_sel1_ibuf                                  |
-| 66     | INT_NET | Net   : fpga_mem_io_down_1                             |
-|        |         | Driver: fpga_top_design_0/fpga_mem_io_down_1           |
-| 52     | INT_NET | Net   : fpga_mem_io_up_1                               |
-|        |         | Driver: fpga_top_design_0/fpga_mem_io_up_1             |
-| 31     | INT_NET | Net   : ecc_sel2_c                                     |
-|        |         | Driver: ecc_sel2_ibuf                                  |
-| 23     | INT_NET | Net   : fpga_top_design_0/modulo/data_out_left_sn_N_2  |
-|        |         | Driver: fpga_top_design_0/modulo/data_out_left_sn_m1   |
-| 21     | INT_NET | Net   : ecc_sel0_c                                     |
-|        |         | Driver: ecc_sel0_ibuf                                  |
-| 16     | INT_NET | Net   : fpga_top_design_0_mcu_fpga_io_1_i              |
-|        |         | Driver: fpga_top_design_0/mcu_fpga_io_1_RNIF86G        |
-| 16     | INT_NET | Net   : fpga_top_design_0/modulo/chip_sel_out_ss0_Z    |
-|        |         | Driver: fpga_top_design_0/modulo/chip_sel_out_ss0      |
-| 12     | INT_NET | Net   : fpga_top_design_0/modulo/data_out_right_up11_Z |
-|        |         | Driver: fpga_top_design_0/modulo/data_out_right_up11   |
-| 11     | INT_NET | Net   : fpga_top_design_0/decoder_input_up[6]          |
-|        |         | Driver: fpga_top_design_0/fpga_mem_io_up_1_RNIDRF5D    |
-+--------+---------+--------------------------------------------------------+
++--------+---------+-----------------------------------------------------------------+
+| Fanout | Type    | Name                                                            |
++--------+---------+-----------------------------------------------------------------+
+| 71     | INT_NET | Net   : fpga_mem_io_down_1                                      |
+|        |         | Driver: fpga_top_design_0/fpga_mem_io_down_1                    |
+| 63     | INT_NET | Net   : ecc_sel1_c                                              |
+|        |         | Driver: ecc_sel1_ibuf                                           |
+| 52     | INT_NET | Net   : fpga_mem_io_up_1                                        |
+|        |         | Driver: fpga_top_design_0/fpga_mem_io_up_1                      |
+| 28     | INT_NET | Net   : ecc_sel2_c                                              |
+|        |         | Driver: ecc_sel2_ibuf                                           |
+| 26     | INT_NET | Net   : fpga_top_design_0/modulo/data_out_left_sn_N_2           |
+|        |         | Driver: fpga_top_design_0/modulo/data_out_left_sn_m1            |
+| 21     | INT_NET | Net   : ecc_sel0_c                                              |
+|        |         | Driver: ecc_sel0_ibuf                                           |
+| 16     | INT_NET | Net   : fpga_top_design_0_mcu_fpga_io_1_i                       |
+|        |         | Driver: fpga_top_design_0/mcu_fpga_io_1_RNIF86G                 |
+| 16     | INT_NET | Net   : fpga_top_design_0/modulo/data_out_right_down_sn_N_5_mux |
+|        |         | Driver: fpga_top_design_0/modulo/data_out_right_down_sn_m3      |
+| 12     | INT_NET | Net   : fpga_top_design_0/modulo/data_out_right_up11_Z          |
+|        |         | Driver: fpga_top_design_0/modulo/data_out_right_up11            |
+| 11     | INT_NET | Net   : fpga_top_design_0/decoder_input_up[14]                  |
+|        |         | Driver: fpga_top_design_0/fpga_mem_io_up_1_RNIS98VC             |
++--------+---------+-----------------------------------------------------------------+
 

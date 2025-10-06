@@ -3201,7 +3201,7 @@
 </row>
 <row>
  <cell>SPI_MUX</cell>
- <cell>MUX_FABRIC</cell>
+ <cell>MUX_IO</cell>
 </row>
 </table>
 </cdata>
@@ -3228,6 +3228,26 @@
  <cell>Direction</cell>
  <cell>Description</cell>
 </header>
+<row>
+ <cell>SPI_0_DI</cell>
+ <cell>IN</cell>
+ <cell>-</cell>
+</row>
+<row>
+ <cell>SPI_0_DO</cell>
+ <cell>OUT</cell>
+ <cell>-</cell>
+</row>
+<row>
+ <cell>SPI_0_CLK</cell>
+ <cell>INOUT</cell>
+ <cell>-</cell>
+</row>
+<row>
+ <cell>SPI_0_SS0</cell>
+ <cell>INOUT</cell>
+ <cell>-</cell>
+</row>
 <row>
  <cell>POWER_ON_RESET_N</cell>
  <cell>OUT</cell>
@@ -3281,41 +3301,6 @@
 <row>
  <cell>MMUART_1_RXD_F2M</cell>
  <cell>IN</cell>
- <cell>-</cell>
-</row>
-<row>
- <cell>SPI_0_DI_F2M</cell>
- <cell>IN</cell>
- <cell>-</cell>
-</row>
-<row>
- <cell>SPI_0_DO_M2F</cell>
- <cell>OUT</cell>
- <cell>-</cell>
-</row>
-<row>
- <cell>SPI_0_CLK_F2M</cell>
- <cell>IN</cell>
- <cell>-</cell>
-</row>
-<row>
- <cell>SPI_0_CLK_M2F</cell>
- <cell>OUT</cell>
- <cell>-</cell>
-</row>
-<row>
- <cell>SPI_0_SS0_F2M</cell>
- <cell>IN</cell>
- <cell>-</cell>
-</row>
-<row>
- <cell>SPI_0_SS0_M2F</cell>
- <cell>OUT</cell>
- <cell>-</cell>
-</row>
-<row>
- <cell>SPI_0_SS0_M2F_OE</cell>
- <cell>OUT</cell>
  <cell>-</cell>
 </row>
 </table>

@@ -8,16 +8,17 @@ High-effort              : OFF
 Repair min-delay         : OFF
 Incremental              : OFF
 
-INFO: Reading User PDC file C:\Users\Lucas\Documents\Nascerr\FPGA_design\FPGA2memory\constraint\io\user.pdc. 0 error(s) and 0 warning(s)
+INFO: Reading User PDC file C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\constraint\io\user.pdc. 0 error(s) and 0 warning(s)
 
 Running the I/O Bank and Globals Assigner.
 Info:  I/O Bank and Globals Assigner identified 117 fixed I/O macros, 0 unfixed I/O macros
 
 I/O Bank and Globals Assigner completed successfully.
 Total time spent in I/O Bank and Globals Assigner: 0 seconds
+TBBmalloc: skip allocation functions replacement in ucrtbase.dll: unknown prologue for function _msize
 
-Placer V5.0 - 2024.1.0 
-Design: prj_2_memory_sb                 Started: Thu Jul 24 13:27:17 2025
+Placer V5.0 - 2024.2.0 
+Design: prj_2_memory_sb                 Started: Mon Oct  6 10:21:35 2025
 
 Initializing Normal-Effort Standard Placement ...
 Clustering ...
@@ -33,9 +34,9 @@ Improvement              : 0 seconds
 Placer completed successfully.
 
 Design: prj_2_memory_sb                 
-Finished: Thu Jul 24 13:27:19 2025
-Total CPU Time:     00:00:01            Total Elapsed Time: 00:00:02
-Total Memory Usage: 141.4 Mbytes
+Finished: Mon Oct  6 10:21:38 2025
+Total CPU Time:     00:00:02            Total Elapsed Time: 00:00:03
+Total Memory Usage: 143.2 Mbytes
                         o - o - o - o - o - o
 
 
@@ -51,25 +52,25 @@ Clock pins: 1
 Clock pins: 1
 
 Router 
-Design: C:\Users\Lucas\Documents\Nascerr\FPGA_design\FPGA2memory\designer\prj_2_memory_sb\prj_2_memory_sbStarted: Thu Jul 24 13:27:21 2025
+Design: C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\designer\prj_2_memory_sb\prj_2_memory_sbStarted: Mon Oct  6 10:21:41 2025
 
 
 Router completed successfully.
 
-Design: C:\Users\Lucas\Documents\Nascerr\FPGA_design\FPGA2memory\designer\prj_2_memory_sb\prj_2_memory_sb
-Finished: Thu Jul 24 13:27:27 2025
-Total CPU Time:     00:00:05            Total Elapsed Time: 00:00:06
-Total Memory Usage: 896.0 Mbytes
+Design: C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\designer\prj_2_memory_sb\prj_2_memory_sb
+Finished: Mon Oct  6 10:21:48 2025
+Total CPU Time:     00:00:07            Total Elapsed Time: 00:00:07
+Total Memory Usage: 897.9 Mbytes
                         o - o - o - o - o - o
 
 Resource Usage
 +---------------+------+-------+------------+
 | Type          | Used | Total | Percentage |
 +---------------+------+-------+------------+
-| 4LUT          | 291  | 27696 | 1.05       |
+| 4LUT          | 290  | 27696 | 1.05       |
 | DFF           | 6    | 27696 | 0.02       |
 | I/O Register  | 0    | 414   | 0.00       |
-| Logic Element | 292  | 27696 | 1.05       |
+| Logic Element | 291  | 27696 | 1.05       |
 +---------------+------+-------+------------+
 
 I/O Placement

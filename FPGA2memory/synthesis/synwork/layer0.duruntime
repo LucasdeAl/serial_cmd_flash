@@ -29,6 +29,12 @@ Runtime Summary:
 			Hardware Generation Phase, Initial Cleanup Phase, Optimization Phase: Negligible CPU time
 		* Library: work, DesignUnit: SYSRESET
 			Initial Cleanup Phase, Optimization Phase: Negligible CPU time
+		* Library: work, DesignUnit: TRIBUFF
+			Initial Cleanup Phase, Optimization Phase: Negligible CPU time
+		* Library: work, DesignUnit: INBUF
+			Initial Cleanup Phase, Optimization Phase: Negligible CPU time
+		* Library: work, DesignUnit: BIBUF
+			Initial Cleanup Phase, Optimization Phase: Negligible CPU time
 		* Library: work, DesignUnit: MSS_025
 			Initial Cleanup Phase, Optimization Phase: Negligible CPU time
 		* Library: work, DesignUnit: RCOSC_25_50MHZ

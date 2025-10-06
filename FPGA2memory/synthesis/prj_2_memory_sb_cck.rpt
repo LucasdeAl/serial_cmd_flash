@@ -5,19 +5,19 @@ and may only be used pursuant to the terms and conditions of a written license a
 with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
 Synopsys software or the associated documentation is strictly prohibited.
 Tool: Synplify Pro (R)
-Build: V-2023.09M
-Install: C:\Microchip\Libero_SoC_v2024.1\SynplifyPro
+Build: V-2023.09M-3
+Install: C:\Microchip\Libero_SoC_v2024.2\SynplifyPro
 OS: Windows 10 or later
-Hostname: DESKTOP-V6FS948
+Hostname: DESKTOP-RBAIS6T
 
 Implementation : synthesis
 
-# Written on Thu Jul 24 13:21:52 2025
+# Written on Mon Oct  6 10:21:19 2025
 
 ##### DESIGN INFO #######################################################
 
 Top View:                "prj_2_memory_sb"
-Constraint File(s):      "C:\Users\Lucas\Documents\Nascerr\FPGA_design\FPGA2memory\designer\prj_2_memory_sb\synthesis.fdc"
+Constraint File(s):      "C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\designer\prj_2_memory_sb\synthesis.fdc"
 
 
 
@@ -84,10 +84,12 @@ p:MMUART_0_RXD_F2M
 p:MMUART_0_TXD_M2F
 p:MMUART_1_RXD_F2M
 p:MMUART_1_TXD_M2F
-p:SPI_0_CLK_M2F
-p:SPI_0_DI_F2M
+p:SPI_0_CLK_M2F (bidir end point)
+p:SPI_0_CLK_M2F (bidir start point)
+p:SPI_0_DI_M2F
 p:SPI_0_DO_M2F
-p:SPI_0_SS0_M2F
+p:SPI_0_SS0_M2F (bidir end point)
+p:SPI_0_SS0_M2F (bidir start point)
 p:SRAM_A_0
 p:SRAM_A_1
 p:SRAM_A_2
