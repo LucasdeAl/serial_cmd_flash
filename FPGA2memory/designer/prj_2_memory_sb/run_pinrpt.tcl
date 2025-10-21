@@ -1,6 +1,6 @@
 DESIGN=prj_2_memory_sb
-DESDIR=C:\Users\Lucas\Documents\Nascerr\FPGA_design\FPGA2memory\designer\prj_2_memory_sb
-TARGET_DIR=C:\Users\Lucas\Documents\Nascerr\FPGA_design\FPGA2memory\designer\prj_2_memory_sb
+DESDIR=C:\Users\Acacio\Desktop\projeto_nascerr_clone\serial_cmd_flash\FPGA2memory\designer\prj_2_memory_sb
+TARGET_DIR=C:\Users\Acacio\Desktop\projeto_nascerr_clone\serial_cmd_flash\FPGA2memory\designer\prj_2_memory_sb
 FAM=SmartFusion2
 DIE=PA4M2500
 PACKAGE=vf256

@@ -1,26 +1,26 @@
 #--  Synopsys, Inc.
-#--  Version V-2023.09M
-#--  Project file C:\Users\Lucas\Documents\Nascerr\FPGA_design\FPGA2memory\synthesis\prj_2_memory_sb_syn.prj
-#--  Written on Thu Jul 24 13:21:56 2025
+#--  Version V-2023.09M-3
+#--  Project file C:\Users\Acacio\Desktop\projeto_nascerr_clone\serial_cmd_flash\FPGA2memory\synthesis\prj_2_memory_sb_syn.prj
+#--  Written on Tue Oct 21 10:35:08 2025
 
 
 #project files
-add_file -include "C:/Users/Lucas/Documents/Nascerr/FPGA_design/FPGA2memory/hdl/TBEC_RSC_encoder.sv"
-add_file -include "C:/Users/Lucas/Documents/Nascerr/FPGA_design/FPGA2memory/hdl/TBEC_RSC_decoder.sv"
-add_file -include "C:/Users/Lucas/Documents/Nascerr/FPGA_design/FPGA2memory/hdl/MRSC_encoder.sv"
-add_file -include "C:/Users/Lucas/Documents/Nascerr/FPGA_design/FPGA2memory/hdl/MRSC_decoder.sv"
-add_file -include "C:/Users/Lucas/Documents/Nascerr/FPGA_design/FPGA2memory/hdl/ecc_design.sv"
-add_file -verilog -vlog_std sysv "C:/Users/Lucas/Documents/Nascerr/FPGA_design/FPGA2memory/hdl/design.sv"
-add_file -verilog "C:/Users/Lucas/Documents/Nascerr/FPGA_design/FPGA2memory/component/Actel/DirectCore/CoreResetP/7.1.100/rtl/vlog/core/coreresetp_pcie_hotreset.v"
-add_file -verilog "C:/Users/Lucas/Documents/Nascerr/FPGA_design/FPGA2memory/component/Actel/DirectCore/CoreResetP/7.1.100/rtl/vlog/core/coreresetp.v"
-add_file -verilog "C:/Users/Lucas/Documents/Nascerr/FPGA_design/FPGA2memory/component/work/prj_2_memory_sb_sb/CCC_0/prj_2_memory_sb_sb_CCC_0_FCCC.v"
-add_file -verilog "C:/Users/Lucas/Documents/Nascerr/FPGA_design/FPGA2memory/component/Actel/SgCore/OSC/2.0.101/osc_comps.v"
-add_file -verilog "C:/Users/Lucas/Documents/Nascerr/FPGA_design/FPGA2memory/component/work/prj_2_memory_sb_sb/FABOSC_0/prj_2_memory_sb_sb_FABOSC_0_OSC.v"
-add_file -verilog "C:/Users/Lucas/Documents/Nascerr/FPGA_design/FPGA2memory/component/work/prj_2_memory_sb_sb_MSS/prj_2_memory_sb_sb_MSS_syn.v"
-add_file -verilog "C:/Users/Lucas/Documents/Nascerr/FPGA_design/FPGA2memory/component/work/prj_2_memory_sb_sb_MSS/prj_2_memory_sb_sb_MSS.v"
-add_file -verilog "C:/Users/Lucas/Documents/Nascerr/FPGA_design/FPGA2memory/component/work/prj_2_memory_sb_sb/prj_2_memory_sb_sb.v"
-add_file -verilog "C:/Users/Lucas/Documents/Nascerr/FPGA_design/FPGA2memory/component/work/prj_2_memory_sb/prj_2_memory_sb.v"
-add_file -fpga_constraint "C:/Users/Lucas/Documents/Nascerr/FPGA_design/FPGA2memory/designer/prj_2_memory_sb/synthesis.fdc"
+add_file -include "C:/Users/Acacio/Desktop/projeto_nascerr_clone/serial_cmd_flash/FPGA2memory/hdl/TBEC_RSC_encoder.sv"
+add_file -include "C:/Users/Acacio/Desktop/projeto_nascerr_clone/serial_cmd_flash/FPGA2memory/hdl/TBEC_RSC_decoder.sv"
+add_file -include "C:/Users/Acacio/Desktop/projeto_nascerr_clone/serial_cmd_flash/FPGA2memory/hdl/MRSC_encoder.sv"
+add_file -include "C:/Users/Acacio/Desktop/projeto_nascerr_clone/serial_cmd_flash/FPGA2memory/hdl/MRSC_decoder.sv"
+add_file -include "C:/Users/Acacio/Desktop/projeto_nascerr_clone/serial_cmd_flash/FPGA2memory/hdl/ecc_design.sv"
+add_file -verilog -vlog_std sysv "C:/Users/Acacio/Desktop/projeto_nascerr_clone/serial_cmd_flash/FPGA2memory/hdl/design.sv"
+add_file -verilog "C:/Users/Acacio/Desktop/projeto_nascerr_clone/serial_cmd_flash/FPGA2memory/component/Actel/DirectCore/CoreResetP/7.1.100/rtl/vlog/core/coreresetp_pcie_hotreset.v"
+add_file -verilog "C:/Users/Acacio/Desktop/projeto_nascerr_clone/serial_cmd_flash/FPGA2memory/component/Actel/DirectCore/CoreResetP/7.1.100/rtl/vlog/core/coreresetp.v"
+add_file -verilog "C:/Users/Acacio/Desktop/projeto_nascerr_clone/serial_cmd_flash/FPGA2memory/component/work/prj_2_memory_sb_sb/CCC_0/prj_2_memory_sb_sb_CCC_0_FCCC.v"
+add_file -verilog "C:/Users/Acacio/Desktop/projeto_nascerr_clone/serial_cmd_flash/FPGA2memory/component/Actel/SgCore/OSC/2.0.101/osc_comps.v"
+add_file -verilog "C:/Users/Acacio/Desktop/projeto_nascerr_clone/serial_cmd_flash/FPGA2memory/component/work/prj_2_memory_sb_sb/FABOSC_0/prj_2_memory_sb_sb_FABOSC_0_OSC.v"
+add_file -verilog "C:/Users/Acacio/Desktop/projeto_nascerr_clone/serial_cmd_flash/FPGA2memory/component/work/prj_2_memory_sb_sb_MSS/prj_2_memory_sb_sb_MSS_syn.v"
+add_file -verilog "C:/Users/Acacio/Desktop/projeto_nascerr_clone/serial_cmd_flash/FPGA2memory/component/work/prj_2_memory_sb_sb_MSS/prj_2_memory_sb_sb_MSS.v"
+add_file -verilog "C:/Users/Acacio/Desktop/projeto_nascerr_clone/serial_cmd_flash/FPGA2memory/component/work/prj_2_memory_sb_sb/prj_2_memory_sb_sb.v"
+add_file -verilog "C:/Users/Acacio/Desktop/projeto_nascerr_clone/serial_cmd_flash/FPGA2memory/component/work/prj_2_memory_sb/prj_2_memory_sb.v"
+add_file -fpga_constraint "C:/Users/Acacio/Desktop/projeto_nascerr_clone/serial_cmd_flash/FPGA2memory/designer/prj_2_memory_sb/synthesis.fdc"
 
 
 #implementation: "synthesis"
@@ -60,6 +60,7 @@ set_option -write_vhdl 0
 
 # actel_options
 set_option -rw_check_on_ram 0
+set_option -slr_aware_debug 0
 
 # Microchip G4
 set_option -run_prop_extract 1
@@ -94,9 +95,6 @@ set_option -no_sequential_opt 0
 # common_options
 set_option -add_dut_hierarchy 0
 set_option -prepare_readback 0
-
-# flow_options
-set_option -slr_aware_debug 0
 
 # sequential_optimization_options
 set_option -symbolic_fsm_compiler 1

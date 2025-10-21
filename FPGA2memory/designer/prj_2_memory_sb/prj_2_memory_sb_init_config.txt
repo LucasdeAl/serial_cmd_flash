@@ -1,6 +1,6 @@
 Configuration Report for MSS, SERDES(s), Fabric DDR and Fabric CCC(s)
-Microchip Technology Inc. - Microchip Libero Software Release v2024.1 (Version 2024.1.0.3)
-Date: Thu Jul 24 13:29:13 2025
+Microchip Technology Inc. - Microchip Libero Software Release v2024.2 (Version 2024.2.0.13)
+Date: Tue Oct 21 10:55:33 2025
 
 prj_2_memory_sb_sb_0/CCC_0/CCC_INST/INST_CCC_IP
 +-------------------+--------------------+---------------+-------+
@@ -532,7 +532,7 @@ prj_2_memory_sb_sb_0/prj_2_memory_sb_sb_MSS_0/MSS_ADLIB_INST/INST_MSS_025_IP
 | MDDR_CONFIG             | F_AXI_AHB_MODE              | INIT[458:458]   | 1'h0         | INIT[50]  | 1             |
 | MDDR_CONFIG             | PHY_SELF_REF_EN             | INIT[459:459]   | 1'h0         | INIT[50]  | 1             |
 | USB_IO_INPUT_SEL        | USB_IO_INPUT_SEL            | INIT[461:460]   | 2'h0         | INIT[51]  | 1             |
-| PERIPH_CLOCK_MUX_SEL    | SPI0_SCK_FAB_SEL            | INIT[462:462]   | 1'h1         | INIT[52]  | 1             |
+| PERIPH_CLOCK_MUX_SEL    | SPI0_SCK_FAB_SEL            | INIT[462:462]   | 1'h0         | INIT[52]  | 1             |
 | PERIPH_CLOCK_MUX_SEL    | SPI1_SCK_FAB_SEL            | INIT[463:463]   | 1'h0         | INIT[52]  | 1             |
 | PERIPH_CLOCK_MUX_SEL    | TRACECLK_DIV2_SEL           | INIT[464:464]   | 1'h0         | INIT[52]  | 1             |
 | WDOGCONFIG              | G4_TESTWDOGENABLE           | INIT[465:465]   | 1'h0         | INIT[53]  | 1             |
@@ -784,30 +784,30 @@ prj_2_memory_sb_sb_0/prj_2_memory_sb_sb_MSS_0/MSS_ADLIB_INST/INST_MSS_025_IP
 | IOMUXCELL_15_CONFIG     | MSS_IOMUXSEL5UPPER          | INIT[1025:1025] | 1'h0         | INIT[105] | 1             |
 | IOMUXCELL_15_CONFIG     | MSS_IOMUXSEL5MID            | INIT[1026:1026] | 1'h0         | INIT[105] | 1             |
 | IOMUXCELL_15_CONFIG     | MSS_IOMUXSEL5LOWER          | INIT[1027:1027] | 1'h0         | INIT[105] | 1             |
-| IOMUXCELL_16_CONFIG     | MSS_IOMUXSEL0               | INIT[1028:1028] | 1'h0         | INIT[106] | 1             |
+| IOMUXCELL_16_CONFIG     | MSS_IOMUXSEL0               | INIT[1028:1028] | 1'h1         | INIT[106] | 1             |
 | IOMUXCELL_16_CONFIG     | MSS_IOMUXSEL1               | INIT[1029:1029] | 1'h0         | INIT[106] | 1             |
 | IOMUXCELL_16_CONFIG     | MSS_IOMUXSEL2               | INIT[1030:1030] | 1'h0         | INIT[106] | 1             |
 | IOMUXCELL_16_CONFIG     | MSS_IOMUXSEL3               | INIT[1031:1031] | 1'h0         | INIT[106] | 1             |
 | IOMUXCELL_16_CONFIG     | MSS_IOMUXSEL4UPPER          | INIT[1032:1032] | 1'h0         | INIT[106] | 1             |
-| IOMUXCELL_16_CONFIG     | MSS_IOMUXSEL4MID            | INIT[1033:1033] | 1'h0         | INIT[106] | 1             |
-| IOMUXCELL_16_CONFIG     | MSS_IOMUXSEL4LOWER          | INIT[1034:1034] | 1'h0         | INIT[106] | 1             |
+| IOMUXCELL_16_CONFIG     | MSS_IOMUXSEL4MID            | INIT[1033:1033] | 1'h1         | INIT[106] | 1             |
+| IOMUXCELL_16_CONFIG     | MSS_IOMUXSEL4LOWER          | INIT[1034:1034] | 1'h1         | INIT[106] | 1             |
 | IOMUXCELL_16_CONFIG     | MSS_IOMUXSEL5UPPER          | INIT[1035:1035] | 1'h0         | INIT[106] | 1             |
-| IOMUXCELL_16_CONFIG     | MSS_IOMUXSEL5MID            | INIT[1036:1036] | 1'h0         | INIT[106] | 1             |
-| IOMUXCELL_16_CONFIG     | MSS_IOMUXSEL5LOWER          | INIT[1037:1037] | 1'h0         | INIT[106] | 1             |
+| IOMUXCELL_16_CONFIG     | MSS_IOMUXSEL5MID            | INIT[1036:1036] | 1'h1         | INIT[106] | 1             |
+| IOMUXCELL_16_CONFIG     | MSS_IOMUXSEL5LOWER          | INIT[1037:1037] | 1'h1         | INIT[106] | 1             |
 | IOMUXCELL_17_CONFIG     | MSS_IOMUXSEL0               | INIT[1038:1038] | 1'h0         | INIT[107] | 1             |
 | IOMUXCELL_17_CONFIG     | MSS_IOMUXSEL1               | INIT[1039:1039] | 1'h0         | INIT[107] | 1             |
-| IOMUXCELL_17_CONFIG     | MSS_IOMUXSEL2               | INIT[1040:1040] | 1'h1         | INIT[107] | 1             |
-| IOMUXCELL_17_CONFIG     | MSS_IOMUXSEL3               | INIT[1041:1041] | 1'h1         | INIT[107] | 1             |
+| IOMUXCELL_17_CONFIG     | MSS_IOMUXSEL2               | INIT[1040:1040] | 1'h0         | INIT[107] | 1             |
+| IOMUXCELL_17_CONFIG     | MSS_IOMUXSEL3               | INIT[1041:1041] | 1'h0         | INIT[107] | 1             |
 | IOMUXCELL_17_CONFIG     | MSS_IOMUXSEL4UPPER          | INIT[1042:1042] | 1'h0         | INIT[107] | 1             |
 | IOMUXCELL_17_CONFIG     | MSS_IOMUXSEL4MID            | INIT[1043:1043] | 1'h0         | INIT[107] | 1             |
 | IOMUXCELL_17_CONFIG     | MSS_IOMUXSEL4LOWER          | INIT[1044:1044] | 1'h0         | INIT[107] | 1             |
-| IOMUXCELL_17_CONFIG     | MSS_IOMUXSEL5UPPER          | INIT[1045:1045] | 1'h0         | INIT[107] | 1             |
+| IOMUXCELL_17_CONFIG     | MSS_IOMUXSEL5UPPER          | INIT[1045:1045] | 1'h1         | INIT[107] | 1             |
 | IOMUXCELL_17_CONFIG     | MSS_IOMUXSEL5MID            | INIT[1046:1046] | 1'h0         | INIT[107] | 1             |
 | IOMUXCELL_17_CONFIG     | MSS_IOMUXSEL5LOWER          | INIT[1047:1047] | 1'h0         | INIT[107] | 1             |
-| IOMUXCELL_18_CONFIG     | MSS_IOMUXSEL0               | INIT[1048:1048] | 1'h0         | INIT[108] | 1             |
+| IOMUXCELL_18_CONFIG     | MSS_IOMUXSEL0               | INIT[1048:1048] | 1'h1         | INIT[108] | 1             |
 | IOMUXCELL_18_CONFIG     | MSS_IOMUXSEL1               | INIT[1049:1049] | 1'h0         | INIT[108] | 1             |
-| IOMUXCELL_18_CONFIG     | MSS_IOMUXSEL2               | INIT[1050:1050] | 1'h1         | INIT[108] | 1             |
-| IOMUXCELL_18_CONFIG     | MSS_IOMUXSEL3               | INIT[1051:1051] | 1'h1         | INIT[108] | 1             |
+| IOMUXCELL_18_CONFIG     | MSS_IOMUXSEL2               | INIT[1050:1050] | 1'h0         | INIT[108] | 1             |
+| IOMUXCELL_18_CONFIG     | MSS_IOMUXSEL3               | INIT[1051:1051] | 1'h0         | INIT[108] | 1             |
 | IOMUXCELL_18_CONFIG     | MSS_IOMUXSEL4UPPER          | INIT[1052:1052] | 1'h0         | INIT[108] | 1             |
 | IOMUXCELL_18_CONFIG     | MSS_IOMUXSEL4MID            | INIT[1053:1053] | 1'h0         | INIT[108] | 1             |
 | IOMUXCELL_18_CONFIG     | MSS_IOMUXSEL4LOWER          | INIT[1054:1054] | 1'h0         | INIT[108] | 1             |

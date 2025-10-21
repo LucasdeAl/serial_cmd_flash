@@ -2,8 +2,8 @@
 <?xml-stylesheet href="rptstyle.xsl" type="text/xsl" ?>
 <doc>
 <title>Resource Report</title>
-<text>Microchip Technology Inc. - Microchip Libero Software Release v2024.1 (Version 2024.1.0.3)</text>
-<text>Date: Thu Jul 24 13:22:00 2025
+<text>Microchip Technology Inc. - Microchip Libero Software Release v2024.2 (Version 2024.2.0.13)</text>
+<text>Date: Tue Oct 21 10:35:11 2025
 </text>
 <section><name>Device Selection</name></section>
 <table>
@@ -76,7 +76,7 @@
 </row>
 <row>
  <cell>Source</cell>
- <cell>C:\Users\Lucas\Documents\Nascerr\FPGA_design\FPGA2memory\synthesis\prj_2_memory_sb.vm</cell>
+ <cell>C:\Users\Acacio\Desktop\projeto_nascerr_clone\serial_cmd_flash\FPGA2memory\synthesis\prj_2_memory_sb.vm</cell>
 </row>
 </table>
 <section><name>Options</name></section>
@@ -106,7 +106,7 @@
 </header>
 <row>
  <cell>4LUT</cell>
- <cell>291</cell>
+ <cell>290</cell>
  <cell>27696</cell>
  <cell>1.05</cell>
 </row>
@@ -216,7 +216,7 @@
 </header>
 <row>
  <cell>Fabric Logic</cell>
- <cell>291</cell>
+ <cell>290</cell>
  <cell>6</cell>
 </row>
 <row>
@@ -236,7 +236,7 @@
 </row>
 <row>
  <cell>Total Used</cell>
- <cell>291</cell>
+ <cell>290</cell>
  <cell>6</cell>
 </row>
 </table>
@@ -331,13 +331,13 @@
 </row>
 <row>
  <cell>Output I/O</cell>
- <cell>37</cell>
+ <cell>35</cell>
  <cell>0</cell>
  <cell>0</cell>
 </row>
 <row>
  <cell>Bidirectional I/O</cell>
- <cell>48</cell>
+ <cell>50</cell>
  <cell>0</cell>
  <cell>0</cell>
 </row>
@@ -369,8 +369,8 @@
  <cell> 2.50v</cell>
  <cell> N/A</cell>
  <cell> 32</cell>
- <cell> 37</cell>
- <cell> 48</cell>
+ <cell> 35</cell>
+ <cell> 50</cell>
 </row>
 </table>
 <section><name>Nets assigned to chip global resources</name></section>
@@ -412,17 +412,7 @@
  <cell>Name</cell>
 </header>
 <row>
- <cell>66</cell>
- <cell>INT_NET</cell>
- <cell>Net   : ecc_sel1_c</cell>
-</row>
-<row>
- <cell></cell>
- <cell></cell>
- <cell>Driver: ecc_sel1_ibuf</cell>
-</row>
-<row>
- <cell>66</cell>
+ <cell>71</cell>
  <cell>INT_NET</cell>
  <cell>Net   : fpga_mem_io_down_1</cell>
 </row>
@@ -430,6 +420,16 @@
  <cell></cell>
  <cell></cell>
  <cell>Driver: fpga_top_design_0/fpga_mem_io_down_1</cell>
+</row>
+<row>
+ <cell>63</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : ecc_sel1_c</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: ecc_sel1_ibuf</cell>
 </row>
 <row>
  <cell>52</cell>
@@ -442,7 +442,7 @@
  <cell>Driver: fpga_top_design_0/fpga_mem_io_up_1</cell>
 </row>
 <row>
- <cell>31</cell>
+ <cell>28</cell>
  <cell>INT_NET</cell>
  <cell>Net   : ecc_sel2_c</cell>
 </row>
@@ -452,7 +452,7 @@
  <cell>Driver: ecc_sel2_ibuf</cell>
 </row>
 <row>
- <cell>23</cell>
+ <cell>26</cell>
  <cell>INT_NET</cell>
  <cell>Net   : fpga_top_design_0/modulo/data_out_left_sn_N_2</cell>
 </row>
@@ -484,12 +484,12 @@
 <row>
  <cell>16</cell>
  <cell>INT_NET</cell>
- <cell>Net   : fpga_top_design_0/modulo/chip_sel_out_ss0_Z</cell>
+ <cell>Net   : fpga_top_design_0/modulo/data_out_right_down_sn_N_5_mux</cell>
 </row>
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: fpga_top_design_0/modulo/chip_sel_out_ss0</cell>
+ <cell>Driver: fpga_top_design_0/modulo/data_out_right_down_sn_m3</cell>
 </row>
 <row>
  <cell>12</cell>
@@ -504,12 +504,12 @@
 <row>
  <cell>11</cell>
  <cell>INT_NET</cell>
- <cell>Net   : fpga_top_design_0/decoder_input_up[6]</cell>
+ <cell>Net   : fpga_top_design_0/decoder_input_up[14]</cell>
 </row>
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: fpga_top_design_0/fpga_mem_io_up_1_RNIDRF5D</cell>
+ <cell>Driver: fpga_top_design_0/fpga_mem_io_up_1_RNIS98VC</cell>
 </row>
 </table>
 <section><name>High fanout nets (through buffer trees)</name></section>
@@ -520,17 +520,7 @@
  <cell>Name</cell>
 </header>
 <row>
- <cell>66</cell>
- <cell>INT_NET</cell>
- <cell>Net   : ecc_sel1_c</cell>
-</row>
-<row>
- <cell></cell>
- <cell></cell>
- <cell>Driver: ecc_sel1_ibuf</cell>
-</row>
-<row>
- <cell>66</cell>
+ <cell>71</cell>
  <cell>INT_NET</cell>
  <cell>Net   : fpga_mem_io_down_1</cell>
 </row>
@@ -538,6 +528,16 @@
  <cell></cell>
  <cell></cell>
  <cell>Driver: fpga_top_design_0/fpga_mem_io_down_1</cell>
+</row>
+<row>
+ <cell>63</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : ecc_sel1_c</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: ecc_sel1_ibuf</cell>
 </row>
 <row>
  <cell>52</cell>
@@ -550,7 +550,7 @@
  <cell>Driver: fpga_top_design_0/fpga_mem_io_up_1</cell>
 </row>
 <row>
- <cell>31</cell>
+ <cell>28</cell>
  <cell>INT_NET</cell>
  <cell>Net   : ecc_sel2_c</cell>
 </row>
@@ -560,7 +560,7 @@
  <cell>Driver: ecc_sel2_ibuf</cell>
 </row>
 <row>
- <cell>23</cell>
+ <cell>26</cell>
  <cell>INT_NET</cell>
  <cell>Net   : fpga_top_design_0/modulo/data_out_left_sn_N_2</cell>
 </row>
@@ -592,12 +592,12 @@
 <row>
  <cell>16</cell>
  <cell>INT_NET</cell>
- <cell>Net   : fpga_top_design_0/modulo/chip_sel_out_ss0_Z</cell>
+ <cell>Net   : fpga_top_design_0/modulo/data_out_right_down_sn_N_5_mux</cell>
 </row>
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: fpga_top_design_0/modulo/chip_sel_out_ss0</cell>
+ <cell>Driver: fpga_top_design_0/modulo/data_out_right_down_sn_m3</cell>
 </row>
 <row>
  <cell>12</cell>
@@ -612,12 +612,12 @@
 <row>
  <cell>11</cell>
  <cell>INT_NET</cell>
- <cell>Net   : fpga_top_design_0/decoder_input_up[6]</cell>
+ <cell>Net   : fpga_top_design_0/decoder_input_up[14]</cell>
 </row>
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: fpga_top_design_0/fpga_mem_io_up_1_RNIDRF5D</cell>
+ <cell>Driver: fpga_top_design_0/fpga_mem_io_up_1_RNIS98VC</cell>
 </row>
 </table>
 </doc>

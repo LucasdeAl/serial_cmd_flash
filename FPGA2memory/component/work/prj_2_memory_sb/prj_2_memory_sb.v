@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////
-// Created by SmartDesign Thu Jul 24 13:21:38 2025
-// Version: 2024.1 2024.1.0.3
+// Created by SmartDesign Tue Oct 21 10:21:34 2025
+// Version: 2024.2 2024.2.0.13
 //////////////////////////////////////////////////////////////////////
 
 `timescale 1ns / 100ps
@@ -37,7 +37,7 @@ module prj_2_memory_sb(
     MCU_WE,
     MMUART_0_RXD_F2M,
     MMUART_1_RXD_F2M,
-    SPI_0_DI_F2M,
+    SPI_0_DI,
     ecc_sel0,
     ecc_sel1,
     ecc_sel2,
@@ -46,9 +46,7 @@ module prj_2_memory_sb(
     LED2,
     MMUART_0_TXD_M2F,
     MMUART_1_TXD_M2F,
-    SPI_0_CLK_M2F,
-    SPI_0_DO_M2F,
-    SPI_0_SS0_M2F,
+    SPI_0_DO,
     SRAM_A_0,
     SRAM_A_1,
     SRAM_A_10,
@@ -80,6 +78,8 @@ module prj_2_memory_sb(
     flag1,
     flag3,
     // Inouts
+    SPI_0_CLK,
+    SPI_0_SS0,
     mcu_fpga_io,
     mcu_mem_io_down,
     mcu_mem_io_up
@@ -117,7 +117,7 @@ input         MCU_UB;
 input         MCU_WE;
 input         MMUART_0_RXD_F2M;
 input         MMUART_1_RXD_F2M;
-input         SPI_0_DI_F2M;
+input         SPI_0_DI;
 input         ecc_sel0;
 input         ecc_sel1;
 input         ecc_sel2;
@@ -128,9 +128,7 @@ output        LED1;
 output        LED2;
 output        MMUART_0_TXD_M2F;
 output        MMUART_1_TXD_M2F;
-output        SPI_0_CLK_M2F;
-output        SPI_0_DO_M2F;
-output        SPI_0_SS0_M2F;
+output        SPI_0_DO;
 output        SRAM_A_0;
 output        SRAM_A_1;
 output        SRAM_A_10;
@@ -164,6 +162,8 @@ output        flag3;
 //--------------------------------------------------------------------
 // Inout
 //--------------------------------------------------------------------
+inout         SPI_0_CLK;
+inout         SPI_0_SS0;
 inout  [15:0] mcu_fpga_io;
 inout  [15:0] mcu_mem_io_down;
 inout  [15:0] mcu_mem_io_up;
@@ -203,10 +203,10 @@ wire          MMUART_0_TXD_M2F_net_0;
 wire          MMUART_1_RXD_F2M;
 wire          MMUART_1_TXD_M2F_net_0;
 wire          prj_2_memory_sb_sb_0_FAB_CCC_GL0;
-wire          SPI_0_CLK_M2F_net_0;
-wire          SPI_0_DI_F2M;
-wire          SPI_0_DO_M2F_net_0;
-wire          SPI_0_SS0_M2F_net_0;
+wire          SPI_0_CLK;
+wire          SPI_0_DI;
+wire          SPI_0_DO_net_0;
+wire          SPI_0_SS0;
 wire          MCU_A_14;
 wire          MCU_A_15;
 wire          MCU_A_16;
@@ -250,10 +250,8 @@ wire          LED1_net_2;
 wire          flag1_net_2;
 wire          flag3_net_1;
 wire          MMUART_1_TXD_M2F_net_1;
-wire          SPI_0_CLK_M2F_net_1;
-wire          SPI_0_DO_M2F_net_1;
-wire          SPI_0_SS0_M2F_net_1;
 wire          MMUART_0_TXD_M2F_net_1;
+wire          SPI_0_DO_net_1;
 wire   [1:0]  chip_sel_out_net_0;
 wire   [2:0]  ecc_sel_net_0;
 wire   [0:2]  flag_out_net_0;
@@ -334,14 +332,10 @@ assign flag3_net_1            = flag3_net_0[2];
 assign flag3                  = flag3_net_1;
 assign MMUART_1_TXD_M2F_net_1 = MMUART_1_TXD_M2F_net_0;
 assign MMUART_1_TXD_M2F       = MMUART_1_TXD_M2F_net_1;
-assign SPI_0_CLK_M2F_net_1    = SPI_0_CLK_M2F_net_0;
-assign SPI_0_CLK_M2F          = SPI_0_CLK_M2F_net_1;
-assign SPI_0_DO_M2F_net_1     = SPI_0_DO_M2F_net_0;
-assign SPI_0_DO_M2F           = SPI_0_DO_M2F_net_1;
-assign SPI_0_SS0_M2F_net_1    = SPI_0_SS0_M2F_net_0;
-assign SPI_0_SS0_M2F          = SPI_0_SS0_M2F_net_1;
 assign MMUART_0_TXD_M2F_net_1 = MMUART_0_TXD_M2F_net_0;
 assign MMUART_0_TXD_M2F       = MMUART_0_TXD_M2F_net_1;
+assign SPI_0_DO_net_1         = SPI_0_DO_net_0;
+assign SPI_0_DO               = SPI_0_DO_net_1;
 //--------------------------------------------------------------------
 // Slices assignments
 //--------------------------------------------------------------------
@@ -377,14 +371,13 @@ fpga_top_design fpga_top_design_0(
 //--------prj_2_memory_sb_sb
 prj_2_memory_sb_sb prj_2_memory_sb_sb_0(
         // Inputs
+        .SPI_0_DI         ( SPI_0_DI ),
         .FAB_RESET_N      ( VCC_net ), // tied to 1'b1 from definition
         .DEVRST_N         ( DEVRST_N ),
         .MMUART_0_RXD_F2M ( MMUART_0_RXD_F2M ),
         .MMUART_1_RXD_F2M ( MMUART_1_RXD_F2M ),
-        .SPI_0_DI_F2M     ( SPI_0_DI_F2M ),
-        .SPI_0_CLK_F2M    ( VCC_net ),
-        .SPI_0_SS0_F2M    ( VCC_net ),
         // Outputs
+        .SPI_0_DO         ( SPI_0_DO_net_0 ),
         .POWER_ON_RESET_N (  ),
         .INIT_DONE        (  ),
         .FAB_CCC_GL0      ( prj_2_memory_sb_sb_0_FAB_CCC_GL0 ),
@@ -392,10 +385,9 @@ prj_2_memory_sb_sb prj_2_memory_sb_sb_0(
         .MSS_READY        (  ),
         .MMUART_0_TXD_M2F ( MMUART_0_TXD_M2F_net_0 ),
         .MMUART_1_TXD_M2F ( MMUART_1_TXD_M2F_net_0 ),
-        .SPI_0_DO_M2F     ( SPI_0_DO_M2F_net_0 ),
-        .SPI_0_CLK_M2F    ( SPI_0_CLK_M2F_net_0 ),
-        .SPI_0_SS0_M2F    ( SPI_0_SS0_M2F_net_0 ),
-        .SPI_0_SS0_M2F_OE (  ) 
+        // Inouts
+        .SPI_0_CLK        ( SPI_0_CLK ),
+        .SPI_0_SS0        ( SPI_0_SS0 ) 
         );
 
 

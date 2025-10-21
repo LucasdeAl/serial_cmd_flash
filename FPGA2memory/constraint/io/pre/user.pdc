@@ -2,11 +2,11 @@
 
 # User I/O Constraints file 
 
-# Version: 2024.1 2024.1.0.3
+# Version: 2024.2 2024.2.0.13
 
 # Family: SmartFusion2 , Die: M2S025T , Package: 256 VF
 
-# Date generated: Thu Jul 24 13:26:41 2025 
+# Date generated: Tue Oct 21 11:54:40 2025 
 
 
 # 
@@ -217,30 +217,6 @@ set_io MMUART_1_TXD_M2F  \
     -DIRECTION OUTPUT
 
 
-set_io SPI_0_CLK_M2F   \
-    -pinname G16       \
-    -fixed yes         \
-    -DIRECTION OUTPUT
-
-
-set_io SPI_0_DI_F2M   \
-    -pinname J14      \
-    -fixed yes        \
-    -DIRECTION INPUT
-
-
-set_io SPI_0_DO_M2F    \
-    -pinname H15       \
-    -fixed yes         \
-    -DIRECTION OUTPUT
-
-
-set_io SPI_0_SS0_M2F   \
-    -pinname J13       \
-    -fixed yes         \
-    -DIRECTION OUTPUT
-
-
 set_io SRAM_A_0        \
     -pinname C10       \
     -fixed yes         \
@@ -404,13 +380,13 @@ set_io SRAM_WE         \
 
 
 set_io ecc_sel0       \
-    -pinname J12      \
+    -pinname G16      \
     -fixed yes        \
     -DIRECTION INPUT
 
 
 set_io ecc_sel1       \
-    -pinname K12      \
+    -pinname H15      \
     -fixed yes        \
     -DIRECTION INPUT
 
