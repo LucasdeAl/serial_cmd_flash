@@ -1,5 +1,5 @@
 probe \
-    -desdir {C:\Users\Lucas\Documents\Nascerr\FPGA_design\FPGA2memory\designer\prj_2_memory_sb} \
+    -desdir {C:\Users\Acacio\Desktop\projeto_nascerr_clone\serial_cmd_flash\FPGA2memory\designer\prj_2_memory_sb} \
     -design prj_2_memory_sb \
     -fam SmartFusion2 \
     -die PA4M2500 \

@@ -1,6 +1,6 @@
 <project name="prj_2_memory_sb" version="1.2">
     <ProjectDirectory>
-        C:\Users\Lucas\Documents\Nascerr\FPGA_design\FPGA2memory\designer\prj_2_memory_sb\prj_2_memory_sb_fp
+        C:\Users\Acacio\Desktop\projeto_nascerr_clone\serial_cmd_flash\FPGA2memory\designer\prj_2_memory_sb\prj_2_memory_sb_fp
     </ProjectDirectory>
     <View>
         ChainView
@@ -9,7 +9,7 @@
         M2S025T
     </LiberoTargetDevice>
     <LogFile>
-        C:\Users\Lucas\Documents\Nascerr\FPGA_design\FPGA2memory\designer\prj_2_memory_sb\prj_2_memory_sb_fp\prj_2_memory_sb.log
+        C:\Users\Acacio\Desktop\projeto_nascerr_clone\serial_cmd_flash\FPGA2memory\designer\prj_2_memory_sb\prj_2_memory_sb_fp\prj_2_memory_sb.log
     </LogFile>
     <SerializationOption>
         Skip
@@ -19,10 +19,10 @@
     </ProgrammingInterface>
     <programmer status="enable" type="FlashPro5" revision="UndefRev" connection="usb1.1">
         <name>
-            S2011JOGRF
+            S207823
         </name>
         <id>
-            S2011JOGRF
+            S207823
         </id>
     </programmer>
     <Servers>
