@@ -1,3 +1,4 @@
+@W: CG100 :"C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\syn_comps.v":4:13:4:25|User defined pragma syn_black_box detected
 @W: CG100 :"C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\Actel\SgCore\OSC\2.0.101\osc_comps.v":4:13:4:25|User defined pragma syn_black_box detected
 @W: CG100 :"C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\Actel\SgCore\OSC\2.0.101\osc_comps.v":14:13:14:25|User defined pragma syn_black_box detected
 @W: CG100 :"C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\Actel\SgCore\OSC\2.0.101\osc_comps.v":27:13:27:25|User defined pragma syn_black_box detected

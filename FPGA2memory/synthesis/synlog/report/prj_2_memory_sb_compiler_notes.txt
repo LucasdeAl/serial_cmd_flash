@@ -8,21 +8,21 @@
 @N: CG364 :"C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\hdl\ecc_design.sv":8:7:8:16|Synthesizing module ecc_design in library work.
 @N: CG364 :"C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\hdl\design.sv":3:7:3:21|Synthesizing module fpga_top_design in library work.
 @N: CG179 :"C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\hdl\design.sv":61:20:61:27|Removing redundant assignment.
-@N: CG364 :"C:\Microchip\Libero_SoC_v2024.2\SynplifyPro\lib\generic\smartfusion2.v":376:7:376:9|Synthesizing module VCC in library work.
-@N: CG364 :"C:\Microchip\Libero_SoC_v2024.2\SynplifyPro\lib\generic\smartfusion2.v":372:7:372:9|Synthesizing module GND in library work.
-@N: CG364 :"C:\Microchip\Libero_SoC_v2024.2\SynplifyPro\lib\generic\smartfusion2.v":362:7:362:12|Synthesizing module CLKINT in library work.
-@N: CG364 :"C:\Microchip\Libero_SoC_v2024.2\SynplifyPro\lib\generic\smartfusion2.v":729:7:729:9|Synthesizing module CCC in library work.
+@N: CG364 :"C:\Microchip\Libero_SoC_2025.2\Libero_SoC\Synplify_Pro\lib\generic\smartfusion2.v":376:7:376:9|Synthesizing module VCC in library work.
+@N: CG364 :"C:\Microchip\Libero_SoC_2025.2\Libero_SoC\Synplify_Pro\lib\generic\smartfusion2.v":372:7:372:9|Synthesizing module GND in library work.
+@N: CG364 :"C:\Microchip\Libero_SoC_2025.2\Libero_SoC\Synplify_Pro\lib\generic\smartfusion2.v":362:7:362:12|Synthesizing module CLKINT in library work.
+@N: CG364 :"C:\Microchip\Libero_SoC_2025.2\Libero_SoC\Synplify_Pro\lib\generic\smartfusion2.v":729:7:729:9|Synthesizing module CCC in library work.
 @N: CG364 :"C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb\CCC_0\prj_2_memory_sb_sb_CCC_0_FCCC.v":5:7:5:35|Synthesizing module prj_2_memory_sb_sb_CCC_0_FCCC in library work.
 @N: CG364 :"C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vlog\core\coreresetp.v":23:7:23:16|Synthesizing module CoreResetP in library work.
 @N: CG364 :"C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\Actel\SgCore\OSC\2.0.101\osc_comps.v":51:7:51:24|Synthesizing module RCOSC_25_50MHZ_FAB in library work.
 @N: CG364 :"C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\Actel\SgCore\OSC\2.0.101\osc_comps.v":11:7:11:20|Synthesizing module RCOSC_25_50MHZ in library work.
 @N: CG364 :"C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb\FABOSC_0\prj_2_memory_sb_sb_FABOSC_0_OSC.v":5:7:5:37|Synthesizing module prj_2_memory_sb_sb_FABOSC_0_OSC in library work.
 @N: CG364 :"C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb_MSS\prj_2_memory_sb_sb_MSS_syn.v":5:7:5:13|Synthesizing module MSS_025 in library work.
-@N: CG364 :"C:\Microchip\Libero_SoC_v2024.2\SynplifyPro\lib\generic\smartfusion2.v":286:7:286:11|Synthesizing module BIBUF in library work.
-@N: CG364 :"C:\Microchip\Libero_SoC_v2024.2\SynplifyPro\lib\generic\smartfusion2.v":268:7:268:11|Synthesizing module INBUF in library work.
-@N: CG364 :"C:\Microchip\Libero_SoC_v2024.2\SynplifyPro\lib\generic\smartfusion2.v":280:7:280:13|Synthesizing module TRIBUFF in library work.
+@N: CG364 :"C:\Microchip\Libero_SoC_2025.2\Libero_SoC\Synplify_Pro\lib\generic\smartfusion2.v":286:7:286:11|Synthesizing module BIBUF in library work.
+@N: CG364 :"C:\Microchip\Libero_SoC_2025.2\Libero_SoC\Synplify_Pro\lib\generic\smartfusion2.v":268:7:268:11|Synthesizing module INBUF in library work.
+@N: CG364 :"C:\Microchip\Libero_SoC_2025.2\Libero_SoC\Synplify_Pro\lib\generic\smartfusion2.v":280:7:280:13|Synthesizing module TRIBUFF in library work.
 @N: CG364 :"C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb_MSS\prj_2_memory_sb_sb_MSS.v":9:7:9:28|Synthesizing module prj_2_memory_sb_sb_MSS in library work.
-@N: CG364 :"C:\Microchip\Libero_SoC_v2024.2\SynplifyPro\lib\generic\smartfusion2.v":720:7:720:14|Synthesizing module SYSRESET in library work.
+@N: CG364 :"C:\Microchip\Libero_SoC_2025.2\Libero_SoC\Synplify_Pro\lib\generic\smartfusion2.v":720:7:720:14|Synthesizing module SYSRESET in library work.
 @N: CG364 :"C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb\prj_2_memory_sb_sb.v":9:7:9:24|Synthesizing module prj_2_memory_sb_sb in library work.
 @N: CG364 :"C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb\prj_2_memory_sb.v":9:7:9:21|Synthesizing module prj_2_memory_sb in library work.
 @N: CL159 :"C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb\FABOSC_0\prj_2_memory_sb_sb_FABOSC_0_OSC.v":14:7:14:9|Input XTL is unused.

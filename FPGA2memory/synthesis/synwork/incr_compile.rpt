@@ -1,41 +1,108 @@
 
-Copyright (C) 1994-2023 Synopsys, Inc.
+Copyright (C) 1994-2025 Synopsys, Inc.
 This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
 and may only be used pursuant to the terms and conditions of a written license agreement
 with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
 Synopsys software or the associated documentation is strictly prohibited.
 Tool: Synplify Pro (R)
-Build: V-2023.09M-3
-Install: C:\Microchip\Libero_SoC_v2024.2\SynplifyPro
+Build: W-2025.03M-SP1-1
+Install: C:\Microchip\Libero_SoC_2025.2\Libero_SoC\Synplify_Pro
 OS: Windows 10 or later
 Hostname: DESKTOP-RBAIS6T
 
 Implementation : synthesis
-Synopsys HDL compiler and linker, Version comp202309synp1, Build 280R, Built Jun 20 2024 08:13:40, @
+Synopsys HDL compiler and linker, Version comp202503synp2, Build 183R, Built Nov 18 2025 09:08:11, @
 
-Modified Files: 0
+Modified Files: 7
 FID:  path (prevtimestamp, timestamp)
+92       C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\syn_comps.v (2026-06-22 10:59:28, 2026-06-22 11:02:25)
+76       C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb\prj_2_memory_sb.v (2026-06-22 10:59:22, 2026-06-22 11:02:12)
+77       C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb\CCC_0\prj_2_memory_sb_sb_CCC_0_FCCC.v (2026-06-22 10:59:09, 2026-06-22 11:02:06)
+78       C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb\FABOSC_0\prj_2_memory_sb_sb_FABOSC_0_OSC.v (2026-06-22 10:59:10, 2026-06-22 11:02:06)
+79       C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb\prj_2_memory_sb_sb.v (2026-06-22 10:59:10, 2026-06-22 11:02:07)
+80       C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb_MSS\prj_2_memory_sb_sb_MSS.v (2026-06-22 10:59:07, 2026-06-22 11:02:04)
+81       C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb_MSS\prj_2_memory_sb_sb_MSS_syn.v (2026-06-22 10:59:07, 2026-06-22 11:02:03)
 
 *******************************************************************
-Modules that may have changed as a result of file changes: 0
+Modules that may have changed as a result of file changes: 21
 MID:  lib.cell.view
+20       work.CoreResetP.verilog may have changed because the following files changed:
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb\prj_2_memory_sb.v (2026-06-22 10:59:22, 2026-06-22 11:02:12) <-- (may instantiate this module)
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb\prj_2_memory_sb_sb.v (2026-06-22 10:59:10, 2026-06-22 11:02:07) <-- (may instantiate this module)
+27       work.MCHP_BLIC.verilog may have changed because the following files changed:
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\syn_comps.v (2026-06-22 10:59:28, 2026-06-22 11:02:25) <-- (module definition)
+0        work.MRSC_decoder.verilog may have changed because the following files changed:
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb\prj_2_memory_sb.v (2026-06-22 10:59:22, 2026-06-22 11:02:12) <-- (may instantiate this module)
+1        work.MRSC_encoder.verilog may have changed because the following files changed:
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb\prj_2_memory_sb.v (2026-06-22 10:59:22, 2026-06-22 11:02:12) <-- (may instantiate this module)
+21       work.MSS_025.verilog may have changed because the following files changed:
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb\prj_2_memory_sb.v (2026-06-22 10:59:22, 2026-06-22 11:02:12) <-- (may instantiate this module)
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb\prj_2_memory_sb_sb.v (2026-06-22 10:59:10, 2026-06-22 11:02:07) <-- (may instantiate this module)
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb_MSS\prj_2_memory_sb_sb_MSS.v (2026-06-22 10:59:07, 2026-06-22 11:02:04) <-- (may instantiate this module)
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb_MSS\prj_2_memory_sb_sb_MSS_syn.v (2026-06-22 10:59:07, 2026-06-22 11:02:03) <-- (module definition)
+9        work.RCOSC_1MHZ.verilog may have changed because the following files changed:
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb\prj_2_memory_sb.v (2026-06-22 10:59:22, 2026-06-22 11:02:12) <-- (may instantiate this module)
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb\FABOSC_0\prj_2_memory_sb_sb_FABOSC_0_OSC.v (2026-06-22 10:59:10, 2026-06-22 11:02:06) <-- (may instantiate this module)
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb\prj_2_memory_sb_sb.v (2026-06-22 10:59:10, 2026-06-22 11:02:07) <-- (may instantiate this module)
+10       work.RCOSC_1MHZ_FAB.verilog may have changed because the following files changed:
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb\prj_2_memory_sb.v (2026-06-22 10:59:22, 2026-06-22 11:02:12) <-- (may instantiate this module)
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb\FABOSC_0\prj_2_memory_sb_sb_FABOSC_0_OSC.v (2026-06-22 10:59:10, 2026-06-22 11:02:06) <-- (may instantiate this module)
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb\prj_2_memory_sb_sb.v (2026-06-22 10:59:10, 2026-06-22 11:02:07) <-- (may instantiate this module)
+11       work.RCOSC_25_50MHZ.verilog may have changed because the following files changed:
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb\prj_2_memory_sb.v (2026-06-22 10:59:22, 2026-06-22 11:02:12) <-- (may instantiate this module)
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb\FABOSC_0\prj_2_memory_sb_sb_FABOSC_0_OSC.v (2026-06-22 10:59:10, 2026-06-22 11:02:06) <-- (may instantiate this module)
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb\prj_2_memory_sb_sb.v (2026-06-22 10:59:10, 2026-06-22 11:02:07) <-- (may instantiate this module)
+12       work.RCOSC_25_50MHZ_FAB.verilog may have changed because the following files changed:
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb\prj_2_memory_sb.v (2026-06-22 10:59:22, 2026-06-22 11:02:12) <-- (may instantiate this module)
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb\FABOSC_0\prj_2_memory_sb_sb_FABOSC_0_OSC.v (2026-06-22 10:59:10, 2026-06-22 11:02:06) <-- (may instantiate this module)
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb\prj_2_memory_sb_sb.v (2026-06-22 10:59:10, 2026-06-22 11:02:07) <-- (may instantiate this module)
+2        work.TBEC_RSC_decoder.verilog may have changed because the following files changed:
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb\prj_2_memory_sb.v (2026-06-22 10:59:22, 2026-06-22 11:02:12) <-- (may instantiate this module)
+3        work.TBEC_RSC_encoder.verilog may have changed because the following files changed:
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb\prj_2_memory_sb.v (2026-06-22 10:59:22, 2026-06-22 11:02:12) <-- (may instantiate this module)
+15       work.XTLOSC.verilog may have changed because the following files changed:
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb\prj_2_memory_sb.v (2026-06-22 10:59:22, 2026-06-22 11:02:12) <-- (may instantiate this module)
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb\FABOSC_0\prj_2_memory_sb_sb_FABOSC_0_OSC.v (2026-06-22 10:59:10, 2026-06-22 11:02:06) <-- (may instantiate this module)
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb\prj_2_memory_sb_sb.v (2026-06-22 10:59:10, 2026-06-22 11:02:07) <-- (may instantiate this module)
+16       work.XTLOSC_FAB.verilog may have changed because the following files changed:
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb\prj_2_memory_sb.v (2026-06-22 10:59:22, 2026-06-22 11:02:12) <-- (may instantiate this module)
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb\FABOSC_0\prj_2_memory_sb_sb_FABOSC_0_OSC.v (2026-06-22 10:59:10, 2026-06-22 11:02:06) <-- (may instantiate this module)
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb\prj_2_memory_sb_sb.v (2026-06-22 10:59:10, 2026-06-22 11:02:07) <-- (may instantiate this module)
+22       work.coreresetp_pcie_hotreset.verilog may have changed because the following files changed:
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb\prj_2_memory_sb.v (2026-06-22 10:59:22, 2026-06-22 11:02:12) <-- (may instantiate this module)
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb\prj_2_memory_sb_sb.v (2026-06-22 10:59:10, 2026-06-22 11:02:07) <-- (may instantiate this module)
+4        work.ecc_design.verilog may have changed because the following files changed:
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb\prj_2_memory_sb.v (2026-06-22 10:59:22, 2026-06-22 11:02:12) <-- (may instantiate this module)
+5        work.fpga_top_design.verilog may have changed because the following files changed:
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb\prj_2_memory_sb.v (2026-06-22 10:59:22, 2026-06-22 11:02:12) <-- (may instantiate this module)
+6        work.prj_2_memory_sb.verilog may have changed because the following files changed:
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb\prj_2_memory_sb.v (2026-06-22 10:59:22, 2026-06-22 11:02:12) <-- (module definition)
+23       work.prj_2_memory_sb_sb.verilog may have changed because the following files changed:
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb\prj_2_memory_sb.v (2026-06-22 10:59:22, 2026-06-22 11:02:12) <-- (may instantiate this module)
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb\prj_2_memory_sb_sb.v (2026-06-22 10:59:10, 2026-06-22 11:02:07) <-- (module definition)
+24       work.prj_2_memory_sb_sb_CCC_0_FCCC.verilog may have changed because the following files changed:
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb\prj_2_memory_sb.v (2026-06-22 10:59:22, 2026-06-22 11:02:12) <-- (may instantiate this module)
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb\CCC_0\prj_2_memory_sb_sb_CCC_0_FCCC.v (2026-06-22 10:59:09, 2026-06-22 11:02:06) <-- (module definition)
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb\prj_2_memory_sb_sb.v (2026-06-22 10:59:10, 2026-06-22 11:02:07) <-- (may instantiate this module)
+25       work.prj_2_memory_sb_sb_FABOSC_0_OSC.verilog may have changed because the following files changed:
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb\prj_2_memory_sb.v (2026-06-22 10:59:22, 2026-06-22 11:02:12) <-- (may instantiate this module)
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb\FABOSC_0\prj_2_memory_sb_sb_FABOSC_0_OSC.v (2026-06-22 10:59:10, 2026-06-22 11:02:06) <-- (module definition)
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb\prj_2_memory_sb_sb.v (2026-06-22 10:59:10, 2026-06-22 11:02:07) <-- (may instantiate this module)
+26       work.prj_2_memory_sb_sb_MSS.verilog may have changed because the following files changed:
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb\prj_2_memory_sb.v (2026-06-22 10:59:22, 2026-06-22 11:02:12) <-- (may instantiate this module)
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb\prj_2_memory_sb_sb.v (2026-06-22 10:59:10, 2026-06-22 11:02:07) <-- (may instantiate this module)
+                        C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb_MSS\prj_2_memory_sb_sb_MSS.v (2026-06-22 10:59:07, 2026-06-22 11:02:04) <-- (module definition)
 
 *******************************************************************
-Unmodified files: 19
+Unmodified files: 13
 FID:  path (timestamp)
-69       C:\Microchip\Libero_SoC_v2024.2\SynplifyPro\lib\generic\smartfusion2.v (2024-07-25 12:13:38)
-70       C:\Microchip\Libero_SoC_v2024.2\SynplifyPro\lib\vlog\hypermods.v (2024-07-25 12:03:48)
-71       C:\Microchip\Libero_SoC_v2024.2\SynplifyPro\lib\vlog\scemi_objects.v (2024-07-25 12:03:48)
-72       C:\Microchip\Libero_SoC_v2024.2\SynplifyPro\lib\vlog\scemi_pipes.svh (2024-07-25 12:03:48)
+88       C:\Microchip\Libero_SoC_2025.2\Libero_SoC\Synplify_Pro\lib\generic\smartfusion2.v (2025-11-18 11:14:14)
+89       C:\Microchip\Libero_SoC_2025.2\Libero_SoC\Synplify_Pro\lib\vlog\hypermods.v (2025-11-18 13:58:24)
+90       C:\Microchip\Libero_SoC_2025.2\Libero_SoC\Synplify_Pro\lib\vlog\scemi_objects.v (2025-11-18 13:58:24)
+91       C:\Microchip\Libero_SoC_2025.2\Libero_SoC\Synplify_Pro\lib\vlog\scemi_pipes.svh (2025-11-18 13:58:24)
 73       C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vlog\core\coreresetp.v (2025-10-06 09:05:11)
 74       C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vlog\core\coreresetp_pcie_hotreset.v (2025-10-06 09:05:11)
 75       C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\Actel\SgCore\OSC\2.0.101\osc_comps.v (2025-10-06 09:05:12)
-76       C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb\prj_2_memory_sb.v (2025-10-06 10:18:14)
-77       C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb\CCC_0\prj_2_memory_sb_sb_CCC_0_FCCC.v (2025-10-06 10:16:56)
-78       C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb\FABOSC_0\prj_2_memory_sb_sb_FABOSC_0_OSC.v (2025-10-06 10:16:57)
-79       C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb\prj_2_memory_sb_sb.v (2025-10-06 10:16:57)
-80       C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb_MSS\prj_2_memory_sb_sb_MSS.v (2025-10-06 10:16:54)
-81       C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\component\work\prj_2_memory_sb_sb_MSS\prj_2_memory_sb_sb_MSS_syn.v (2025-10-06 10:16:54)
 82       C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\hdl\MRSC_decoder.sv (2025-09-29 10:30:16)
 83       C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\hdl\MRSC_encoder.sv (2025-09-29 10:30:16)
 84       C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\hdl\TBEC_RSC_decoder.sv (2025-09-29 10:30:16)
@@ -44,25 +111,5 @@ FID:  path (timestamp)
 87       C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\hdl\ecc_design.sv (2025-09-29 10:30:17)
 
 *******************************************************************
-Unchanged modules: 20
+Unchanged modules: 0
 MID:  lib.cell.view
-20       work.CoreResetP.verilog
-0        work.MRSC_decoder.verilog
-1        work.MRSC_encoder.verilog
-21       work.MSS_025.verilog
-9        work.RCOSC_1MHZ.verilog
-10       work.RCOSC_1MHZ_FAB.verilog
-11       work.RCOSC_25_50MHZ.verilog
-12       work.RCOSC_25_50MHZ_FAB.verilog
-2        work.TBEC_RSC_decoder.verilog
-3        work.TBEC_RSC_encoder.verilog
-15       work.XTLOSC.verilog
-16       work.XTLOSC_FAB.verilog
-22       work.coreresetp_pcie_hotreset.verilog
-4        work.ecc_design.verilog
-5        work.fpga_top_design.verilog
-6        work.prj_2_memory_sb.verilog
-23       work.prj_2_memory_sb_sb.verilog
-24       work.prj_2_memory_sb_sb_CCC_0_FCCC.verilog
-25       work.prj_2_memory_sb_sb_FABOSC_0_OSC.verilog
-26       work.prj_2_memory_sb_sb_MSS.verilog

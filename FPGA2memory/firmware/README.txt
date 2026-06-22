@@ -1,6 +1,6 @@
 Export Firmware README
 
-Microchip Technology Inc. - Microchip Libero Software Release v2024.2 (Version 2024.2.0.13)
+Microchip Technology Inc. - Microchip Libero Software Release 2025.2 (Version 2025.2.0.14)
 
-Date    :    Mon Oct  6 10:26:14 2025
+Date    :    Mon Jun 22 11:05:44 2026
 Project :    C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory

@@ -22,10 +22,11 @@ data VCCI_2.5_VOLTR COM
 data VCCI_3.3_VOLTR COM
 data FLOW_TYPE NEW
 data PLANNER_IOMODE 1
-data AFL 'C:/Users/Acacio/Documents/GitHub/serial_cmd_flash/FPGA2memory/designer/prj_2_memory_sb/COMPILE/prj_2_memory_sb.afl'
+data AFL 'C:/Users/Acacio/Documents/GitHub/serial_cmd_flash/FPGA2memory/designer/prj_2_memory_sb/prj_2_memory_sb.afl'
 data ADL 'C:/Users/Acacio/Documents/GitHub/serial_cmd_flash/FPGA2memory/designer/prj_2_memory_sb/prj_2_memory_sb.adl'
-data LOC 'C:/Users/Acacio/Documents/GitHub/serial_cmd_flash/FPGA2memory/designer/prj_2_memory_sb/COMPILE/prj_2_memory_sb.loc'
-data SEG 'C:/Users/Acacio/Documents/GitHub/serial_cmd_flash/FPGA2memory/designer/prj_2_memory_sb/COMPILE/prj_2_memory_sb.seg'
+data LOC 'C:/Users/Acacio/Documents/GitHub/serial_cmd_flash/FPGA2memory/designer/prj_2_memory_sb/prj_2_memory_sb.loc'
+data SEG 'C:/Users/Acacio/Documents/GitHub/serial_cmd_flash/FPGA2memory/designer/prj_2_memory_sb/prj_2_memory_sb.seg'
+data NMAT_PDC 'C:/Users/Acacio/Documents/GitHub/serial_cmd_flash/FPGA2memory/designer/prj_2_memory_sb/prj_2_memory_sb.nmatinit.pdc'
 
 data IO_PDC_0 'C:/Users/Acacio/Documents/GitHub/serial_cmd_flash/FPGA2memory/constraint/io/user.pdc'
 data TARGET_IOPDC  'C:/Users/Acacio/Documents/GitHub/serial_cmd_flash/FPGA2memory/constraint/io/user.pdc'

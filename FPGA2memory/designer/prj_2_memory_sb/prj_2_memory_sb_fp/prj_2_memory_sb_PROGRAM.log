@@ -1,0 +1,49 @@
+Software Version: 2025.2.0.14
+Programmer 'S207823' : JTAG TCK / SPI SCK frequency = 1 MHz
+programmer 'S207823' : FlashPro5
+Opened 'C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\designer\prj_2_memory_sb\prj_2_memory_sb_fp\prj_2_memory_sb.pro'
+The 'open_project' command succeeded.
+Info: Programming is already enabled for device 'M2S025T'.
+The 'enable_device' command succeeded.
+PPD file 'C:/Users/Acacio/Documents/GitHub/serial_cmd_flash/FPGA2memory/designer/prj_2_memory_sb/prj_2_memory_sb.ppd' has been loaded successfully.
+DESIGN : prj_2_memory_sb;  CHECKSUM : 07C0;  PDB_VERSION : 1.0
+The 'set_programming_file' command succeeded.
+The 'set_programming_action' command succeeded.
+programmer 'S207823' : Scan Chain...
+Programmer 'S207823' : JTAG TCK / SPI SCK frequency = 1 MHz
+programmer 'S207823' : Check Chain...
+programmer 'S207823' : Scan and Check Chain PASSED.
+Warning: programmer 'S207823' : device 'M2S025T' : Device authentication failure: Failed to validate device certificate.
+programmer 'S207823' : device 'M2S025T' : Executing action PROGRAM
+Programmer 'S207823' : JTAG TCK / SPI SCK frequency = 4 MHz
+programmer 'S207823' : device 'M2S025T' : Programming Interface Protocol: JTAG
+programmer 'S207823' : device 'M2S025T' : EXPORT ISC_ENABLE_RESULT[32] = 00606a24
+programmer 'S207823' : device 'M2S025T' : EXPORT CRCERR[1] = 0
+programmer 'S207823' : device 'M2S025T' : EXPORT EDCERR[1] = 0
+programmer 'S207823' : device 'M2S025T' : Programming FPGA Array...
+programmer 'S207823' : device 'M2S025T' : Calculating component bitstream digests using programming file...
+programmer 'S207823' : device 'M2S025T' : EXPORT Fabric component bitstream digest[256] = 8ae1edcd6041463cad5856c6f4432aae169c158160bb1b5328631537172bb435
+programmer 'S207823' : device 'M2S025T' : EXPORT Entire bitstream digest[256] = 74978319be34a17b761ab624e6f5413ea9744c3d2d6ca33ae5aa3f06fc84dd48
+programmer 'S207823' : device 'M2S025T' : Reading digests for all the segments from the device...
+programmer 'S207823' : device 'M2S025T' : EXPORT Fabric digest: [256] = 62cf624ca62a46428be99bb1bf87859a6d6e2a5b423d0990768913487397dd7a
+programmer 'S207823' : device 'M2S025T' : Design Name: prj_2_memory_sb
+programmer 'S207823' : device 'M2S025T' : EXPORT CHECKSUM[16] = 07c0
+programmer 'S207823' : device 'M2S025T' : EXPORT READ_DESIGN_INFO: [272] = 000000000000000000000000000000000062735f79726f6d656d5f325f6a727007c0
+programmer 'S207823' : device 'M2S025T' : EXPORT DESIGNVER[16] = 0000
+programmer 'S207823' : device 'M2S025T' : EXPORT BACKLEVEL[16] = 0000
+programmer 'S207823' : device 'M2S025T' : ===================================================================================
+programmer 'S207823' : device 'M2S025T' : EXPORT DSN[128] = 6dcfd42c25641e6ca0d7295e9455f32b
+programmer 'S207823' : device 'M2S025T' : ===================================================================================
+programmer 'S207823' : Finished: Mon Jun 22 11:05:30 2026 (Elapsed time 00:00:32)
+programmer 'S207823' : device 'M2S025T' : Executing action PROGRAM PASSED.
+programmer 'S207823' : Chain programming PASSED.
+Chain Programming Finished: Mon Jun 22 11:05:30 2026 (Elapsed time 00:00:32)
+
+                        o - o - o - o - o - o
+
+The 'run_selected_actions' command succeeded.
+Project saved.
+The 'save_project' command succeeded.
+Project closed.
+The 'close_project' command succeeded.
+The Execute Script command succeeded.

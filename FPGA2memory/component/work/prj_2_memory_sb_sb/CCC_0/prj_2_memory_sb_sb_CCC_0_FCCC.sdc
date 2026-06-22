@@ -1,6 +1,6 @@
 set_component prj_2_memory_sb_sb_CCC_0_FCCC
 # Microchip Technology Inc.
-# Date: 2025-Oct-06 10:16:56
+# Date: 2026-Jun-22 11:02:06
 #
 
 create_clock -period 20 [ get_pins { CCC_INST/RCOSC_25_50MHZ } ]

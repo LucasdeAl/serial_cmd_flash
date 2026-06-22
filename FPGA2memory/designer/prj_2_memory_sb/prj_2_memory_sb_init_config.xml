@@ -2,8 +2,8 @@
 <?xml-stylesheet href="rptstyle.xsl" type="text/xsl" ?>
 <doc>
 <title>Configuration Report for MSS, SERDES(s), Fabric DDR and Fabric CCC(s)</title>
-<text>Microchip Technology Inc. - Microchip Libero Software Release v2024.2 (Version 2024.2.0.13)</text>
-<text>Date: Mon Oct  6 10:21:57 2025
+<text>Microchip Technology Inc. - Microchip Libero Software Release 2025.2 (Version 2025.2.0.14)</text>
+<text>Date: Mon Jun 22 11:03:44 2026
 </text>
 <section><name>prj_2_memory_sb_sb_0/CCC_0/CCC_INST/INST_CCC_IP</name></section>
 <table>
@@ -3237,7 +3237,7 @@
  <cell>WDOGCONFIG</cell>
  <cell>G4_TESTWDOGENABLE</cell>
  <cell>INIT[465:465]</cell>
- <cell>1&apos;h0</cell>
+ <cell>1&apos;h1</cell>
  <cell>INIT[53]</cell>
  <cell>1</cell>
 </row>
@@ -3853,7 +3853,7 @@
  <cell>WDOGLOAD</cell>
  <cell>G4_TESTWDOGLOAD</cell>
  <cell>INIT[666:641]</cell>
- <cell>26&apos;h1800000</cell>
+ <cell>26&apos;h017D784</cell>
  <cell>N/A</cell>
  <cell>N/A</cell>
 </row>

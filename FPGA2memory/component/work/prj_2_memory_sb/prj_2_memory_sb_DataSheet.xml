@@ -12,7 +12,7 @@
     <project-description>
     </project-description>
     <location>C:/Users/Acacio/Documents/GitHub/serial_cmd_flash/FPGA2memory/component/work/prj_2_memory_sb</location>
-    <state>GENERATED ( Mon Oct  6 10:26:17 2025 )</state>
+    <state>GENERATED ( Mon Jun 22 11:05:56 2026 )</state>
     <swide-toolchain>SoftConsole workspace has not been generated</swide-toolchain>
   </project-settings>
   <site-map>
@@ -3761,6 +3761,15 @@
           </fullPinName>
           <remapAddress>0x4000_6000</remapAddress>
           <fullAddressSpace>0x4000_6000 - 0x4000_6FFF</fullAddressSpace>
+          <range>0x1000</range>
+          <Size>4KB</Size>
+        </slave>
+        <slave>
+          <name>WATCHDOG</name>
+          <fullPinName>
+          </fullPinName>
+          <remapAddress>0x4000_5000</remapAddress>
+          <fullAddressSpace>0x4000_5000 - 0x4000_5FFF</fullAddressSpace>
           <range>0x1000</range>
           <Size>4KB</Size>
         </slave>

@@ -2,8 +2,8 @@
 <?xml-stylesheet href="rptstyle.xsl" type="text/xsl" ?>
 <doc>
 <title>Resource Report</title>
-<text>Microchip Technology Inc. - Microchip Libero Software Release v2024.2 (Version 2024.2.0.13)</text>
-<text>Date: Mon Oct  6 10:21:28 2025
+<text>Microchip Technology Inc. - Microchip Libero Software Release 2025.2 (Version 2025.2.0.14)</text>
+<text>Date: Mon Jun 22 11:02:51 2026
 </text>
 <section><name>Device Selection</name></section>
 <table>
@@ -106,9 +106,9 @@
 </header>
 <row>
  <cell>4LUT</cell>
- <cell>290</cell>
+ <cell>293</cell>
  <cell>27696</cell>
- <cell>1.05</cell>
+ <cell>1.06</cell>
 </row>
 <row>
  <cell>DFF</cell>
@@ -216,7 +216,7 @@
 </header>
 <row>
  <cell>Fabric Logic</cell>
- <cell>290</cell>
+ <cell>293</cell>
  <cell>6</cell>
 </row>
 <row>
@@ -236,7 +236,7 @@
 </row>
 <row>
  <cell>Total Used</cell>
- <cell>290</cell>
+ <cell>293</cell>
  <cell>6</cell>
 </row>
 </table>
@@ -412,7 +412,7 @@
  <cell>Name</cell>
 </header>
 <row>
- <cell>71</cell>
+ <cell>69</cell>
  <cell>INT_NET</cell>
  <cell>Net   : fpga_mem_io_down_1</cell>
 </row>
@@ -422,7 +422,7 @@
  <cell>Driver: fpga_top_design_0/fpga_mem_io_down_1</cell>
 </row>
 <row>
- <cell>63</cell>
+ <cell>65</cell>
  <cell>INT_NET</cell>
  <cell>Net   : ecc_sel1_c</cell>
 </row>
@@ -432,7 +432,7 @@
  <cell>Driver: ecc_sel1_ibuf</cell>
 </row>
 <row>
- <cell>52</cell>
+ <cell>46</cell>
  <cell>INT_NET</cell>
  <cell>Net   : fpga_mem_io_up_1</cell>
 </row>
@@ -442,7 +442,7 @@
  <cell>Driver: fpga_top_design_0/fpga_mem_io_up_1</cell>
 </row>
 <row>
- <cell>28</cell>
+ <cell>30</cell>
  <cell>INT_NET</cell>
  <cell>Net   : ecc_sel2_c</cell>
 </row>
@@ -452,7 +452,7 @@
  <cell>Driver: ecc_sel2_ibuf</cell>
 </row>
 <row>
- <cell>26</cell>
+ <cell>24</cell>
  <cell>INT_NET</cell>
  <cell>Net   : fpga_top_design_0/modulo/data_out_left_sn_N_2</cell>
 </row>
@@ -492,6 +492,16 @@
  <cell>Driver: fpga_top_design_0/modulo/data_out_right_down_sn_m3</cell>
 </row>
 <row>
+ <cell>13</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : fpga_top_design_0/decoder_input_up[14]</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: fpga_top_design_0/fpga_mem_io_up_1_RNIS98VC</cell>
+</row>
+<row>
  <cell>12</cell>
  <cell>INT_NET</cell>
  <cell>Net   : fpga_top_design_0/modulo/data_out_right_up11_Z</cell>
@@ -500,16 +510,6 @@
  <cell></cell>
  <cell></cell>
  <cell>Driver: fpga_top_design_0/modulo/data_out_right_up11</cell>
-</row>
-<row>
- <cell>11</cell>
- <cell>INT_NET</cell>
- <cell>Net   : fpga_top_design_0/decoder_input_up[14]</cell>
-</row>
-<row>
- <cell></cell>
- <cell></cell>
- <cell>Driver: fpga_top_design_0/fpga_mem_io_up_1_RNIS98VC</cell>
 </row>
 </table>
 <section><name>High fanout nets (through buffer trees)</name></section>
@@ -520,7 +520,7 @@
  <cell>Name</cell>
 </header>
 <row>
- <cell>71</cell>
+ <cell>69</cell>
  <cell>INT_NET</cell>
  <cell>Net   : fpga_mem_io_down_1</cell>
 </row>
@@ -530,7 +530,7 @@
  <cell>Driver: fpga_top_design_0/fpga_mem_io_down_1</cell>
 </row>
 <row>
- <cell>63</cell>
+ <cell>65</cell>
  <cell>INT_NET</cell>
  <cell>Net   : ecc_sel1_c</cell>
 </row>
@@ -540,7 +540,7 @@
  <cell>Driver: ecc_sel1_ibuf</cell>
 </row>
 <row>
- <cell>52</cell>
+ <cell>46</cell>
  <cell>INT_NET</cell>
  <cell>Net   : fpga_mem_io_up_1</cell>
 </row>
@@ -550,7 +550,7 @@
  <cell>Driver: fpga_top_design_0/fpga_mem_io_up_1</cell>
 </row>
 <row>
- <cell>28</cell>
+ <cell>30</cell>
  <cell>INT_NET</cell>
  <cell>Net   : ecc_sel2_c</cell>
 </row>
@@ -560,7 +560,7 @@
  <cell>Driver: ecc_sel2_ibuf</cell>
 </row>
 <row>
- <cell>26</cell>
+ <cell>24</cell>
  <cell>INT_NET</cell>
  <cell>Net   : fpga_top_design_0/modulo/data_out_left_sn_N_2</cell>
 </row>
@@ -600,6 +600,16 @@
  <cell>Driver: fpga_top_design_0/modulo/data_out_right_down_sn_m3</cell>
 </row>
 <row>
+ <cell>13</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : fpga_top_design_0/decoder_input_up[14]</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: fpga_top_design_0/fpga_mem_io_up_1_RNIS98VC</cell>
+</row>
+<row>
  <cell>12</cell>
  <cell>INT_NET</cell>
  <cell>Net   : fpga_top_design_0/modulo/data_out_right_up11_Z</cell>
@@ -608,16 +618,6 @@
  <cell></cell>
  <cell></cell>
  <cell>Driver: fpga_top_design_0/modulo/data_out_right_up11</cell>
-</row>
-<row>
- <cell>11</cell>
- <cell>INT_NET</cell>
- <cell>Net   : fpga_top_design_0/decoder_input_up[14]</cell>
-</row>
-<row>
- <cell></cell>
- <cell></cell>
- <cell>Driver: fpga_top_design_0/fpga_mem_io_up_1_RNIS98VC</cell>
 </row>
 </table>
 </doc>

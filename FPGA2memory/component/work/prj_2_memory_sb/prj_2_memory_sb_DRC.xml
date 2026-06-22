@@ -3,7 +3,7 @@
 <drcreport>
   <header>prj_2_memory_sb</header>
   <drc>
-    <status>C:\Microchip\Libero_SoC_v2024.2\Designer/data/drcreport\warn.png</status>
+    <status>C:\Microchip\Libero_SoC_2025.2\Libero_SoC\Designer/data/drcreport\warn.png</status>
     <StatusMessage>Warning</StatusMessage>
     <message>Floating Driver</message>
     <detail>Floating output pin prj_2_memory_sb_sb_0:FAB_CCC_LOCK</detail>

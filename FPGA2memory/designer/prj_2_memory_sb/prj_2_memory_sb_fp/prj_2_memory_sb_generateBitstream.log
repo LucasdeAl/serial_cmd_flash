@@ -1,14 +1,14 @@
-Software Version: 2024.2.0.13
+Software Version: 2025.2.0.14
 Opened 'C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\designer\prj_2_memory_sb\prj_2_memory_sb_fp\prj_2_memory_sb.pro'
 PDB file 'C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\designer\prj_2_memory_sb\prj_2_memory_sb.pdb' has been loaded successfully.
-DESIGN : prj_2_memory_sb;  CHECKSUM : CC1C;  PDB_VERSION : 1.9
+DESIGN : prj_2_memory_sb;  CHECKSUM : 07C0;  PDB_VERSION : 1.9
 Info: Programming Interface selected is JTAG.
 Info: Design version: 0
 File/Folder 'C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\designer\prj_2_memory_sb\prj_2_memory_sb.ppd' will be overwritten.
 Successfully exported PPD file for currently secured device: 'C:\Users\Acacio\Documents\GitHub\serial_cmd_flash\FPGA2memory\designer\prj_2_memory_sb\prj_2_memory_sb.ppd'; file programs Fabric.
-Fabric component bitstream digest: dc9982d2a4fd5775e6da0976c8870bcb55d024c9fe390c2e90e051322a8145a7
-Entire bitstream digest: 1f05d929e9f7708983347d660c493799934e04474ab91ecdf88e56fbc8ddc632
-Finished: Mon Oct 06 10:22:25 2025 (Elapsed time 00:00:11)
+Fabric component bitstream digest: 8ae1edcd6041463cad5856c6f4432aae169c158160bb1b5328631537172bb435
+Entire bitstream digest: 74978319be34a17b761ab624e6f5413ea9744c3d2d6ca33ae5aa3f06fc84dd48
+Finished: Mon Jun 22 11:04:14 2026 (Elapsed time 00:00:12)
 
 Project saved.
 Project closed.

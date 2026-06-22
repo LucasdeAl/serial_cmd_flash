@@ -2,7 +2,7 @@
 <device>
   <name>prj_2_memory_sb</name>
   <version>1.0</version>
-  <description>CMSIS description for prj_2_memory_sb.  Created by Microsemi SmartDesign on Mon Oct  6 10:26:14 2025</description>
+  <description>CMSIS description for prj_2_memory_sb.  Created by Microsemi SmartDesign on Mon Jun 22 11:05:44 2026</description>
   <addressUnitBits>8</addressUnitBits>
   <width>32</width>
   <peripherals>
@@ -3670,6 +3670,10 @@
     <peripheral>
       <name>H2FINTERRUPT</name>
       <baseAddress>0x40006000</baseAddress>
+    </peripheral>
+    <peripheral>
+      <name>WATCHDOG</name>
+      <baseAddress>0x40005000</baseAddress>
     </peripheral>
     <peripheral>
       <name>TIMER</name>
